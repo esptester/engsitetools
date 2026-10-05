@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrenchCalc documentation — EngSiteTools</title>
+  <meta name="description" content="TrenchCalc documentation. Trench setup, zones, cement stabilisation, culverts, spoil, photos, and LiDAR site survey.">
+  <link rel="canonical" href="https://engsitetools.com/trenchcalc/docs">
+<meta name="theme-color" content="#f4f2ed">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EngSiteTools">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:title" content="TrenchCalc documentation — EngSiteTools">
+  <meta property="og:description" content="TrenchCalc documentation. Trench setup, zones, cement stabilisation, culverts, spoil, photos, and LiDAR site survey.">
+  <meta property="og:url" content="https://engsitetools.com/trenchcalc/docs">
+  <meta property="og:image" content="https://engsitetools.com/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="EngSiteTools: engineering tools, built for the site.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="../site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html" aria-label="EngSiteTools home">
+        <img src="../assets/icons/android-chrome-192x192.png" width="34" height="34" alt="">
+        <span>EngSiteTools</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a class="nav-link" href="../tools.html">Tools</a>
+        <a class="nav-link" href="../about.html">About</a>
+        <a class="btn btn-dark btn-small" href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero-compact">
+      <div class="container">
+        <p class="eyebrow">TrenchCalc</p>
+        <h1>Documentation.</h1>
+        <p class="lead">How to set up a trench, use each tab, and work through cement, culverts, photos, and LiDAR.</p>
+                <nav class="jump" aria-label="TrenchCalc">
+          <a href="index.html"><span>01</span> Overview</a>
+          <a href="features.html"><span>02</span> Pricing</a>
+          <a href="docs.html" aria-current="page"><span>03</span> Docs</a>
+          <a href="help.html"><span>04</span> Help</a>
+          <a href="privacy.html"><span>05</span> Privacy</a>
+          <a href="terms.html"><span>06</span> Terms</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="legal">
+      <div class="container">
+        <article class="prose legal-doc">
+          <nav class="toc-list" aria-label="On this page">
+            <ol>
+              <li><a href="#start">Getting started</a></li>
+              <li><a href="#volume">Trench volume</a></li>
+              <li><a href="#tabs">Tabs</a></li>
+              <li><a href="#cement">Cement stabilisation</a></li>
+              <li><a href="#culverts">Culverts</a></li>
+              <li><a href="#saves">Saves and the diagram</a></li>
+              <li><a href="#photos">Photos</a></li>
+              <li><a href="#survey">Site survey</a></li>
+              <li><a href="#faq">Questions</a></li>
+            </ol>
+          </nav>
+
+          <h2 id="start">Getting started</h2>
+          <h3>Quick start</h3>
+          <ol>
+            <li>Install TrenchCalc from the App Store or Google Play.</li>
+            <li>Open the app and tap Start Trench Setup.</li>
+            <li>Enter length, base width, and depth. The length is the run of the trench, the base width is the bottom, and the depth is from the ground surface.</li>
+            <li>Read the volume.</li>
+            <li>Use the home button for culverts, cement, zones, and the other tools.</li>
+          </ol>
+          <p>Switch between metric and imperial in the settings menu.</p>
+          <h3>System requirements</h3>
+          <ul>
+            <li>Android 9 (API 28) or higher, or iOS 17.0 or higher.</li>
+            <li>3&nbsp;GB of RAM minimum, 4&nbsp;GB recommended.</li>
+            <li>About 200&nbsp;MB for the app, with 2&nbsp;GB of free storage recommended.</li>
+          </ul>
+          <p>LiDAR site survey needs an iPhone 12 Pro or later, or an iPad Pro 11&quot; or 12.9&quot; (3rd generation or later). Some paid features need an internet connection.</p>
+
+          <h2 id="volume">Trench volume</h2>
+          <p>Volume is the core of the app. Three wall layouts are built in:</p>
+          <ul>
+            <li><strong>Rectangular.</strong> A simple cross-section with a constant width.</li>
+            <li><strong>Trapezoidal.</strong> Battered side walls that taper.</li>
+            <li><strong>Benched.</strong> Stepped benches, at 1:1, for deeper excavations.</li>
+          </ul>
+          <p>A single trench can be split into zones:</p>
+          <ul>
+            <li><strong>Bed</strong> for the trench bed.</li>
+            <li><strong>Haunch</strong> for the side support.</li>
+            <li><strong>Side fill</strong> for the backfill.</li>
+            <li><strong>Overlay</strong> for the surface layer.</li>
+            <li><strong>Gap</strong> for the space between box culverts.</li>
+            <li><strong>General</strong> for everything else.</li>
+          </ul>
+          <p>Use zones when each part of the trench takes a different material.</p>
+
+          <h2 id="tabs">Tabs</h2>
+          <p>Features sit on 12 tabs across 3 pages you can rearrange. Free tabs are Basic, Fill, and Wall. The Lifetime purchase unlocks the other nine. A locked tab shows a lock icon.</p>
+          <h3>Free tabs</h3>
+          <p><strong>Basic — change trench size.</strong> Depth, length, and base width in metres or feet, a live diagram, input checks, and a wizard for the first setup.</p>
+          <p><strong>Fill — change fill type.</strong> Preset or custom material, density in kg/m&sup3; or lb/ft&sup3;, a compaction factor, bedding and overlay depth, and per-zone fill for bed, haunch, side, overlay, gap, and general. Volumes update as you type.</p>
+          <p><strong>Wall — benching and battering.</strong> Vertical, benched, or battered walls. Set the bench step height, the batter slope as H:V, and a temporary ramp with its own volume. The diagram shows the wall you picked.</p>
+          <h3>Lifetime tabs</h3>
+          <p><strong>Cement — add cement.</strong> A cement slider from 0 to 20 percent, per zone if zones are on, unconfined compressive strength, water to cement ratio, flowable fill, a weather advisory, cement mass and volume, and a soil type for the strength estimate. Strength is shown at 7 days and 28 days.</p>
+          <p><strong>Culverts — add culverts.</strong> Round or box, a count, diameter or width and height, spacing, and distance to the walls. The diagram warns if they do not fit. The same warning shows on Testing, Spoil, and Planner.</p>
+          <p><strong>Spoil — manage spoil.</strong> Spoil volume from the excavation, pile angle, height, base width, and toe distance, with an option to split the pile evenly on both sides. Each side shows volume, base width, height, and centre from the trench, plus the total.</p>
+          <p><strong>Testing — soil testing.</strong> Compaction, particle size distribution, Atterberg limits, test volumes, foundation tests, and how often to test per lift or zone. The planner can schedule the tests.</p>
+          <p><strong>Planner — construction planner.</strong> A timeline, a cost breakdown, productivity, a culvert installation rate, and mobilisation and demobilisation. Duration is split by activity. Cost categories are personal, plant, material, soil testing, logistics, and production.</p>
+          <p><strong>Geofabric — geofabric lining.</strong> Surface area, roll size, overlap, wastage, number of rolls, linear metres, and a cost from the price per roll. It follows vertical, battered, and benched walls.</p>
+          <p><strong>Survey — site survey.</strong> An AR camera scan, an on-device point cloud, volumes for stockpiles and trenches, scan quality, and a measurement history. It needs a LiDAR device. See <a href="#survey">Site survey</a>.</p>
+          <p><strong>Photos — photo documentation.</strong> Camera capture with a GPS tag, 28 built-in tags plus your own, a detail view, and annotation. See <a href="#photos">Photos</a>.</p>
+          <h3>On every trench</h3>
+          <ul>
+            <li><strong>Truck loads</strong> (free) counts how many loads move the trench or a stockpile, from the size of the truck.</li>
+            <li><strong>Watercart loads</strong> (Lifetime) appears when cement is on, and estimates the water for stabilisation.</li>
+            <li><strong>Export</strong> writes out the material and zone breakdown, as volume and mass.</li>
+            <li>Save and load trench setups, light and dark mode, live recalculation, diagrams on most tabs, and metric or imperial units.</li>
+          </ul>
+
+          <h2 id="cement">Cement stabilisation</h2>
+          <p>Stabilising with cement is there to raise strength and durability. The Cement tab estimates how much cement you need and what strength to expect.</p>
+          <h3>Without zones</h3>
+          <ol>
+            <li>Open the Cement tab.</li>
+            <li>Move the slider from 0 to 20 percent.</li>
+            <li>Read the cement total and mass, and the estimated strength.</li>
+            <li>Adjust the water to cement ratio to see the flow of the mix.</li>
+          </ol>
+          <h3>With zones</h3>
+          <ol>
+            <li>Open the Cement tab and choose which zones to stabilise.</li>
+            <li>Set a cement percentage for each zone.</li>
+            <li>Pick a zone and set its water to cement ratio.</li>
+            <li>Read the 7-day and 28-day strength estimate for that zone.</li>
+          </ol>
+          <p>The estimate uses soil type, cement content, and curing time. As an example from the guide, 5&nbsp;percent cement in a clay is on the order of 0.5&nbsp;MPa at 7 days and 1.2&nbsp;MPa at 28 days. Treat that as an illustration, not a design value for your soil.</p>
+          <p>The mix design reports dry soil weight, cement weight, water, and the volume of the stabilised mix.</p>
+          <p>The weather advisory on the same tab checks humidity, temperature, rain, and related conditions, and says whether today looks suitable for stabilising.</p>
+
+          <h2 id="culverts">Culverts</h2>
+          <ol>
+            <li>Open the Culverts tab and start the round or box wizard.</li>
+            <li>Enter the number of culverts.</li>
+            <li>Enter a diameter, or the length and width of a box.</li>
+            <li>Set the clearance from the left wall.</li>
+            <li>If there is more than one, set the spacing. A single culvert skips this step.</li>
+            <li>Turn on fill zoning if you need it. Otherwise finish and review the diagram.</li>
+            <li>If zoning is on, set the bedding thickness and the overlay thickness, then finish.</li>
+            <li>The close control returns to the Culverts tab with the fields filled in.</li>
+          </ol>
+          <p>The app works out spacing, bedding, cover, and the volume left after the culverts are subtracted.</p>
+          <p>When the zones and culverts fit, the diagram shows a tick and the line &ldquo;All zone heights are within trench design.&rdquo; If a culvert sticks out of the trench, the height card and related fields outline in red. Several culverts that cannot fit light up the same way. Zones that are too tall get a warning too.</p>
+          <p>To change them later, edit the cards, use Reset Culverts to start again, or toggle Enable Fill Zoning.</p>
+
+          <h2 id="saves">Saves, summary, and the diagram</h2>
+          <h3>Saving</h3>
+          <p><strong>Quick Save.</strong> After the trench is entered, open the gear menu and tap Quick Save. That uses the quick-save slot.</p>
+          <p><strong>Manage Saves.</strong> Open Manage Saves from the same menu, tap Save Current, name the trench, and confirm. Cancel leaves it unsaved.</p>
+          <h3>Loading</h3>
+          <ul>
+            <li>Quick Load on the gear screen restores the quick-save slot.</li>
+            <li>If you are signed in, Quick Load also appears under Start Trench Setup when the app opens.</li>
+            <li>Manage Saves lists every named slot. Tap one to load it.</li>
+          </ul>
+          <p>Loading restores dimensions, materials, and settings.</p>
+          <h3>Summary</h3>
+          <p>The paper icon on the app bar lists dimensions, fill, whether culverts are present, cement settings, wall type, and whether geofabric is used.</p>
+          <h3>Diagram</h3>
+          <p>Show or hide the legend, the scale bar, the grid, and lift numbers. Lift numbers are part of Lifetime. Full screen adds a minimap for a closer look. The legend names the zones. A cross-hatch marks cement-stabilised zones. Red means the culverts do not fit inside the trench.</p>
+
+          <h2 id="photos">Photos</h2>
+          <p>Photos keep a GPS position, a time, and a direction. A site map is optional and helps on a large site.</p>
+          <ol>
+            <li>Upload a site map if you want a picture to pin against. Skip it and the app still stores GPS.</li>
+            <li>Tap Take Photo and capture the shot.</li>
+            <li>Name it, for example &ldquo;North excavation, day 1&rdquo;.</li>
+            <li>If a site map is loaded, drop a pin where the photo was taken.</li>
+            <li>On the preview, the corner shows coordinates, date, time, and facing direction. The name sits along the bottom.</li>
+            <li>Save to Camera Roll to keep the annotated photo in the phone&rsquo;s gallery.</li>
+            <li>New Photo starts another one.</li>
+          </ol>
+
+          <h2 id="survey">Site survey</h2>
+          <p>Site Survey uses LiDAR to build a point cloud of a stockpile or a trench and estimate the volume on the device. It needs an iPhone 12 Pro or later, or an iPad Pro 11&quot; or 12.9&quot; (3rd generation or later).</p>
+          <ol>
+            <li>Choose Stockpile or Trench. That choice changes how the cloud is turned into a volume.</li>
+            <li>Tap New Scan to open the camera.</li>
+            <li>Tap Start Scan. Dots appear on the camera view. The corner counts the points. Move slowly around the shape.</li>
+            <li>Tap Stop Scan. After processing, the Site Survey screen shows an estimated volume.</li>
+          </ol>
+
+          <h2 id="faq">Questions</h2>
+          <h3>Can I use TrenchCalc offline?</h3>
+          <p>Some paid features need a connection. Check the feature you are using if a result will not update away from the network.</p>
+          <h3>What units are supported?</h3>
+          <p>Metric and imperial. Switch them in settings. Dimensions, density, and the other inputs follow that choice.</p>
+          <h3>How do I cancel a subscription?</h3>
+          <p>There is no subscription. Lifetime is a one-time purchase. Store purchase history is the place to review it. See <a href="features.html">pricing</a>.</p>
+          <h3>Can I export my data?</h3>
+          <p>Yes. Export writes the material breakdown and the zone breakdown, as volumes and masses.</p>
+          <h3>What is the difference between Free and Lifetime?</h3>
+          <p>Free is Basic, Fill, and Wall, plus the truck load calculator. Lifetime unlocks all 12 tabs. The table is on the <a href="features.html">pricing page</a>.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="../index.html" aria-label="EngSiteTools home">
+            <img src="../assets/icons/android-chrome-192x192.png" width="28" height="28" alt="">
+            <span>EngSiteTools</span>
+          </a>
+          <p class="footer-tagline">Engineering tools, built for the site.</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/company/109299998/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.8v2.1h.1c.5-1 1.8-2.1 3.8-2.1 4 0 4.8 2.7 4.8 6.1V24h-4v-7.7c0-1.8 0-4.2-2.6-4.2s-3 2-3 4.1V24h-4V8.5z"/></svg></a>
+            <a href="https://www.youtube.com/@EngSiteTools" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.8 15.5v-7L15.8 12l-6 3.5z"/></svg></a>
+            <a href="https://x.com/EngSiteTools" target="_blank" rel="noopener noreferrer" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.2 2.3h3.3l-7.2 8.3L23 21.7h-6.2l-4.7-6.2-5.4 6.2H3.4l7.7-8.8L1.3 2.3h6.3l4.3 5.6 6.3-5.6zm-1.2 17.5h1.8L7.1 4.1H5.1l11.9 15.7z"/></svg></a>
+            <a href="https://www.facebook.com/profile.php?id=61581823607086" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.1C24 5.4 18.6 0 12 0S0 5.4 0 12.1C0 18.1 4.4 23.1 10.1 24v-8.4H7.1v-3.5h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9v2.3h3.3l-.5 3.5h-2.8V24C19.6 23.1 24 18.1 24 12.1z"/></svg></a>
+            <a href="https://www.instagram.com/engsitetools/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.9c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.2-.1-4.8-1.7-4.9-4.9-.1-1.3-.1-1.6-.1-4.9s0-3.6.1-4.8c.1-3.2 1.7-4.8 4.9-4.9 1.3-.1 1.6-.1 4.9-.1zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a>
+            <a href="https://www.reddit.com/r/EngSiteTools/" target="_blank" rel="noopener noreferrer" aria-label="Reddit"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.5 2.3 16.8 2a1.4 1.4 0 1 1 .2 1.5l-2.2.4a.4.4 0 0 0-.3.2l-.9 4.2a7.3 7.3 0 0 1 4.7 1.5 1.8 1.8 0 1 1 1.9 2.9v.5c0 2.7-3.1 4.9-7 4.9s-7-2.2-7-4.9v-.4A1.8 1.8 0 1 1 7.1 10a7.4 7.4 0 0 1 4.7-1.5l.9-4.2a.4.4 0 0 1 .4-.2l2.9.6a1.4 1.4 0 0 1-1.5-1.4zM9.3 13.3a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4zm5.4 0a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4zm-5.2 2.6c.5.5 1.6.7 2.5.7s2-.2 2.5-.7a.4.4 0 0 1 .5.5c-.8.8-2.1.9-3 .9s-2.2-.1-3-.9a.4.4 0 0 1 .5-.5z"/></svg></a>
+            <a href="https://www.tiktok.com/@engsitetools" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.5 2c.2 1.6 1 3 2.3 4.1 1 .8 2.2 1.3 3.5 1.4v3.2a7.2 7.2 0 0 1-3.6-1v6.6a6.3 6.3 0 1 1-6.3-6.3c.3 0 .6 0 .9.1v3.3a3 3 0 1 0 2.1 2.9V2h1.1z"/></svg></a>
+          </div>
+        </div>
+        <nav class="footer-cols" aria-label="Footer">
+          <div>
+            <p class="footer-title">Company</p>
+            <ul>
+              <li><a href="../tools.html">Tools</a></li>
+              <li><a href="../about.html">About</a></li>
+              <li><a href="../contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-title">Legal</p>
+            <ul>
+              <li><a href="../engsitetools-privacy.html">Privacy policy</a></li>
+              <li><a href="../legal.html">App policies &amp; terms</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-title">Get in touch</p>
+            <ul>
+              <li><a href="mailto:support@engsitetools.com">support@engsitetools.com</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> EngSiteTools</p>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
