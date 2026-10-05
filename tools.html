@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tools — EngSiteTools</title>
-  <meta name="description" content="Earthworks, materials, site records and survey tools for civil and construction crews. Enter the dimensions in front of you and get an answer you can check.">
+  <meta name="description" content="Site apps for crews on the ground, including TrenchCalc, SiteArea and SlopeCheck, plus office tools such as Deming+.">
   <link rel="canonical" href="https://engsitetools.com/tools">
   <meta name="theme-color" content="#f4f2ed">
 
@@ -12,7 +12,7 @@
   <meta property="og:site_name" content="EngSiteTools">
   <meta property="og:locale" content="en_AU">
   <meta property="og:title" content="Tools — EngSiteTools">
-  <meta property="og:description" content="Earthworks, materials, site records and survey tools for civil and construction crews.">
+  <meta property="og:description" content="Site apps for crews on the ground, including TrenchCalc, SiteArea and SlopeCheck, plus office tools such as Deming+.">
   <meta property="og:url" content="https://engsitetools.com/tools">
   <meta property="og:image" content="https://engsitetools.com/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -56,144 +56,70 @@
     <section class="page-hero">
       <div class="container">
         <p class="eyebrow">Tools</p>
-        <h1>Four toolsets for the work <span class="hl">on the ground</span>.</h1>
-        <p class="lead">Each tool takes the dimensions in front of you and gives back an answer you can check, share and file, without a trip back to the office.</p>
-        <ul class="jump" aria-label="Jump to a toolset">
-          <li><a href="#earthworks"><span>01</span> Earthworks</a></li>
-          <li><a href="#materials"><span>02</span> Materials</a></li>
-          <li><a href="#site-records"><span>03</span> Site records</a></li>
-          <li><a href="#survey"><span>04</span> Survey &amp; measurement</a></li>
+        <h1>Apps for the ground, and a few for <span class="hl">the office</span>.</h1>
+        <p class="lead">The site apps are for the crew standing at the work. Deming+ and CFDLite are for planning and analysis at a desk.</p>
+        <ul class="jump" aria-label="Jump to a group">
+          <li><a href="#on-site">On site</a></li>
+          <li><a href="#in-the-office">In the office</a></li>
         </ul>
       </div>
     </section>
 
-    <!-- 01 Earthworks -->
-    <section class="tool section-white" id="earthworks" aria-labelledby="earthworks-title">
-      <div class="container tool-grid">
-        <div class="tool-copy">
-          <span class="module-no">01</span>
-          <h2 id="earthworks-title">Earthworks</h2>
-          <p class="tool-lead">Excavation volumes, wall profiles, cut and fill, worked out from the dimensions in front of you.</p>
-          <ul class="checklist">
-            <li>Trench, pit and footing excavations</li>
-            <li>Battered and benched sections</li>
-            <li>Cut and fill quantities</li>
-            <li>Wall profiles from set-out dimensions</li>
-          </ul>
+    <section class="section section-white" id="on-site" aria-labelledby="on-site-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">On site</p>
+          <h2 id="on-site-title">For the crew at the work.</h2>
         </div>
-        <figure class="calc-card">
-          <figcaption class="calc-head">
-            <span class="calc-app">Trench excavation</span>
-            <span class="calc-example">Worked example</span>
-          </figcaption>
-          <dl class="spec-rows">
-            <div><dt>Width</dt><dd>0.6 m</dd></div>
-            <div><dt>Depth</dt><dd>1.5 m</dd></div>
-            <div><dt>Length</dt><dd>45.0 m</dd></div>
-            <div class="spec-working"><dt>Working</dt><dd>0.6 × 1.5 × 45.0</dd></div>
-          </dl>
-          <div class="calc-total">
-            <span>Excavation volume</span>
-            <strong>40.5 m³</strong>
-          </div>
-        </figure>
+        <ol class="modules modules-apps">
+          <li class="module" id="trenchcalc">
+            <span class="module-no">01</span>
+            <h3>TrenchCalc</h3>
+            <p>Trench and excavation volumes on site, with cement mix requirements and strength estimates. LiDAR measuring and photo records are in the paid unlock.</p>
+          </li>
+          <li class="module" id="sitearea">
+            <span class="module-no">02</span>
+            <h3>SiteArea</h3>
+            <p>Measure an area on the map by placing points along the boundary. Free, and the layout stays on the phone.</p>
+          </li>
+          <li class="module" id="slopecheck">
+            <span class="module-no">03</span>
+            <h3>SlopeCheck</h3>
+            <p>Point the phone at the ground and get the slope angle, using LiDAR. Processed on the device.</p>
+          </li>
+          <li class="module" id="trench-scanner">
+            <span class="module-no">04</span>
+            <h3>Trench Scanner</h3>
+            <p>Scan a trench with the camera and LiDAR, build a mesh, and estimate the volume dug out. A field estimate, not a certified survey.</p>
+          </li>
+          <li class="module" id="fastocr">
+            <span class="module-no">05</span>
+            <h3>FastOCR</h3>
+            <p>Read text live from the camera. It does not upload a photo. The reading stays on the phone or tablet.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- 02 Materials -->
-    <section class="tool tool-flip" id="materials" aria-labelledby="materials-title">
-      <div class="container tool-grid">
-        <div class="tool-copy">
-          <span class="module-no">02</span>
-          <h2 id="materials-title">Materials</h2>
-          <p class="tool-lead">Quantities for fill, aggregates and stabilised mixes, and the truck loads to move them.</p>
-          <ul class="checklist">
-            <li>Fill and aggregates, in cubic metres or tonnes</li>
-            <li>Binder quantities for stabilised mixes</li>
-            <li>Truck loads for the trucks you've got</li>
-          </ul>
+    <section class="section" id="in-the-office" aria-labelledby="office-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">In the office</p>
+          <h2 id="office-title">For planning and analysis at a desk.</h2>
         </div>
-        <figure class="calc-card">
-          <figcaption class="calc-head">
-            <span class="calc-app">Imported fill</span>
-            <span class="calc-example">Worked example</span>
-          </figcaption>
-          <dl class="spec-rows">
-            <div><dt>Volume</dt><dd>40.5 m³</dd></div>
-            <div><dt>Density</dt><dd>2.0 t/m³</dd></div>
-            <div><dt>Truck capacity</dt><dd>12.0 t</dd></div>
-            <div class="spec-working"><dt>Working</dt><dd>81.0 t ÷ 12.0 t = 6.75</dd></div>
-          </dl>
-          <div class="calc-total">
-            <span>Truck loads</span>
-            <strong>7 loads</strong>
-          </div>
-        </figure>
-      </div>
-    </section>
-
-    <!-- 03 Site records -->
-    <section class="tool section-white" id="site-records" aria-labelledby="site-records-title">
-      <div class="container tool-grid">
-        <div class="tool-copy">
-          <span class="module-no">03</span>
-          <h2 id="site-records-title">Site records</h2>
-          <p class="tool-lead">Diaries, photos and test results captured on site and kept with the job.</p>
-          <ul class="checklist">
-            <li>Daily diaries: weather, crew, plant and delays</li>
-            <li>Photos kept with the work they show</li>
-            <li>Test results recorded against the job</li>
-          </ul>
-        </div>
-        <figure class="calc-card">
-          <figcaption class="calc-head">
-            <span class="calc-app">Daily diary</span>
-            <span class="calc-example">Example entry</span>
-          </figcaption>
-          <dl class="spec-rows">
-            <div><dt>Date</dt><dd>14 Oct</dd></div>
-            <div><dt>Weather</dt><dd>Fine, 24 °C</dd></div>
-            <div><dt>Crew</dt><dd>6 on site</dd></div>
-            <div><dt>Plant</dt><dd>Excavator, roller</dd></div>
-            <div class="spec-working"><dt>Tests</dt><dd>2 compaction</dd></div>
-          </dl>
-          <div class="calc-total">
-            <span>Photos attached</span>
-            <strong>12</strong>
-          </div>
-        </figure>
-      </div>
-    </section>
-
-    <!-- 04 Survey & measurement -->
-    <section class="tool tool-flip" id="survey" aria-labelledby="survey-title">
-      <div class="container tool-grid">
-        <div class="tool-copy">
-          <span class="module-no">04</span>
-          <h2 id="survey-title">Survey &amp; measurement</h2>
-          <p class="tool-lead">Measure and capture site conditions using the phone already in your pocket.</p>
-          <ul class="checklist">
-            <li>Quick measurements on the spot</li>
-            <li>Site conditions captured as you find them</li>
-            <li>Level checks reduced as you go</li>
-          </ul>
-        </div>
-        <figure class="calc-card">
-          <figcaption class="calc-head">
-            <span class="calc-app">Level check</span>
-            <span class="calc-example">Worked example</span>
-          </figcaption>
-          <dl class="spec-rows">
-            <div><dt>Benchmark RL</dt><dd>10.000 m</dd></div>
-            <div><dt>Backsight</dt><dd>1.425 m</dd></div>
-            <div><dt>Foresight</dt><dd>0.980 m</dd></div>
-            <div class="spec-working"><dt>Working</dt><dd>10.000 + 1.425 − 0.980</dd></div>
-          </dl>
-          <div class="calc-total">
-            <span>Reduced level</span>
-            <strong>10.445 m</strong>
-          </div>
-        </figure>
+        <ol class="modules modules-2">
+          <li class="module" id="demingplus">
+            <span class="module-no">01</span>
+            <h3>Deming+</h3>
+            <p>Prompt a plan, weigh activity risk, and generate reports. Built to sit alongside Primavera P6.</p>
+            <a class="module-more" href="https://demingplus.com/" target="_blank" rel="noopener noreferrer">demingplus.com <span aria-hidden="true">→</span></a>
+          </li>
+          <li class="module" id="cfdlite">
+            <span class="module-no">02</span>
+            <h3>CFDLite <span class="app-hold">On hold</span></h3>
+            <p>Fluid simulation for drag, lift and flow, without a full modelling pipeline. This one is parked.</p>
+          </li>
+        </ol>
       </div>
     </section>
 

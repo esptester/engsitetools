@@ -595,6 +595,26 @@ a.module:hover { border-top-color: var(--ink); }
 }
 .module-more span { transition: transform 0.15s; }
 a.module:hover .module-more span { transform: translateX(3px); }
+.app-group-title {
+  margin: 8px 0 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.app-group-title + .modules { margin-top: 8px; }
+.modules + .app-group-title { margin-top: 48px; }
+.modules-apps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.modules-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 760px; }
+.app-hold {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
 
 /* Dark section */
 .section-dark { background: var(--dark); color: #fff; }
@@ -973,7 +993,8 @@ a.module:hover .module-more span { transform: translateX(3px); }
 @media (max-width: 980px) {
   .hero { padding: 48px 0 80px; }
   .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
-  .modules { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .modules,
+  .modules-apps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tool-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
   .tool-flip .tool-copy { order: 0; }
