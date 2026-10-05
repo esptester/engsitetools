@@ -31,6 +31,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://engsitetools.com/about#webpage",
+        "url": "https://engsitetools.com/about",
+        "name": "About — EngSiteTools",
+        "isPartOf": { "@id": "https://engsitetools.com/#website" },
+        "breadcrumb": { "@id": "https://engsitetools.com/about#breadcrumb" },
+        "publisher": { "@id": "https://engsitetools.com/#organization" },
+        "mainEntity": { "@id": "https://engsitetools.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://engsitetools.com/about#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://engsitetools.com/" },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://engsitetools.com/about" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -55,6 +80,11 @@
   <main id="main">
     <section class="page-hero">
       <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">About</span>
+        </nav>
         <p class="eyebrow">About</p>
         <h1>Practical software for the people who <span class="hl">build things</span>.</h1>
         <p class="lead">EngSiteTools makes engineering software for civil and construction work. Most of it is for the site. A few apps are for planning and analysis in the office.</p>

@@ -31,6 +31,81 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <script src="../assets/js/main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://engsitetools.com/trenchcalc/docs#webpage",
+        "url": "https://engsitetools.com/trenchcalc/docs",
+        "name": "TrenchCalc documentation — EngSiteTools",
+        "isPartOf": { "@id": "https://engsitetools.com/#website" },
+        "about": { "@id": "https://engsitetools.com/trenchcalc#app" },
+        "breadcrumb": { "@id": "https://engsitetools.com/trenchcalc/docs#breadcrumb" },
+        "publisher": { "@id": "https://engsitetools.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://engsitetools.com/trenchcalc/docs#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://engsitetools.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://engsitetools.com/tools" },
+          { "@type": "ListItem", "position": 3, "name": "TrenchCalc", "item": "https://engsitetools.com/trenchcalc" },
+          { "@type": "ListItem", "position": 4, "name": "Docs", "item": "https://engsitetools.com/trenchcalc/docs" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://engsitetools.com/trenchcalc/docs#faq",
+        "url": "https://engsitetools.com/trenchcalc/docs",
+        "isPartOf": { "@id": "https://engsitetools.com/trenchcalc/docs#webpage" },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I use TrenchCalc offline?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Some paid features need a connection. Check the feature you are using if a result will not update away from the network."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What units are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Metric and imperial. Switch them in settings. Dimensions, density, and the other inputs follow that choice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I cancel a subscription?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "There is no subscription. Lifetime is a one-time purchase. Store purchase history is the place to review it. See features."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I export my data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Export writes the material breakdown and the zone breakdown, as volumes and masses."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between Free and Lifetime?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Free is Basic, Fill, and Wall, plus the truck load calculator. Lifetime unlocks all 12 tabs. The table is on the features page."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -55,6 +130,15 @@
   <main id="main">
     <section class="page-hero page-hero-compact">
       <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="../tools.html">Tools</a>
+          <span aria-hidden="true">/</span>
+          <a href="index.html">TrenchCalc</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Docs</span>
+        </nav>
         <p class="eyebrow">TrenchCalc</p>
         <h1>Documentation.</h1>
         <p class="lead">How to set up a trench, use each tab, and work through cement, culverts, photos, and LiDAR.</p>
@@ -93,7 +177,7 @@
           </figure>
           <h3>Quick start</h3>
           <ol>
-            <li>Install TrenchCalc from the App Store or Google Play.</li>
+            <li>Install TrenchCalc from the <a href="https://apps.apple.com/au/app/trenchcalc/id6751827956" target="_blank" rel="noopener noreferrer">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.anonymous.cementcalcapp" target="_blank" rel="noopener noreferrer">Google Play</a>.</li>
             <li>Open the app and tap Start Trench Setup.</li>
             <li>Enter length, base width, and depth. The length is the run of the trench, the base width is the bottom, and the depth is from the ground surface.</li>
             <li>Read the volume.</li>

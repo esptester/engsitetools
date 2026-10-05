@@ -31,6 +31,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://engsitetools.com/contact#webpage",
+        "url": "https://engsitetools.com/contact",
+        "name": "Contact — EngSiteTools",
+        "isPartOf": { "@id": "https://engsitetools.com/#website" },
+        "breadcrumb": { "@id": "https://engsitetools.com/contact#breadcrumb" },
+        "publisher": { "@id": "https://engsitetools.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://engsitetools.com/contact#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://engsitetools.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://engsitetools.com/contact" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -55,6 +79,11 @@
   <main id="main">
     <section class="page-hero">
       <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Contact</span>
+        </nav>
         <p class="eyebrow">Contact</p>
         <h1>Tell us what you're <span class="hl">working on</span>.</h1>
         <p class="lead">Questions, partnerships or support. Email is the quickest way to reach us, and it goes straight to the team.</p>

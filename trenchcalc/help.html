@@ -31,6 +31,129 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <script src="../assets/js/main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://engsitetools.com/trenchcalc/help#webpage",
+        "url": "https://engsitetools.com/trenchcalc/help",
+        "name": "TrenchCalc help — EngSiteTools",
+        "isPartOf": { "@id": "https://engsitetools.com/#website" },
+        "about": { "@id": "https://engsitetools.com/trenchcalc#app" },
+        "breadcrumb": { "@id": "https://engsitetools.com/trenchcalc/help#breadcrumb" },
+        "publisher": { "@id": "https://engsitetools.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://engsitetools.com/trenchcalc/help#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://engsitetools.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://engsitetools.com/tools" },
+          { "@type": "ListItem", "position": 3, "name": "TrenchCalc", "item": "https://engsitetools.com/trenchcalc" },
+          { "@type": "ListItem", "position": 4, "name": "Help", "item": "https://engsitetools.com/trenchcalc/help" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://engsitetools.com/trenchcalc/help#faq",
+        "url": "https://engsitetools.com/trenchcalc/help",
+        "isPartOf": { "@id": "https://engsitetools.com/trenchcalc/help#webpage" },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I download TrenchCalc?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It is on Google Play for Android and the App Store for iOS."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a free version?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The free tier covers basic trench volumes, fill type, and wall shape. The one-time Lifetime purchase unlocks cement stabilisation, culverts, LiDAR scanning, soil testing, the construction planner, and photo annotation. See features for the full split."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the system requirements?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Android 9 (API 28) or higher, or iOS 17.0 or higher. 3 GB of RAM minimum, 4 GB recommended. About 200 MB for the app, with 2 GB of free storage recommended. Site Survey (LiDAR) needs an iPhone 12 Pro or later, or an iPad Pro 11\" or 12.9\" (3rd generation or later). Some paid features need an internet connection."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use it for a trench that is not a simple rectangle?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Vertical, battered, and benched walls are supported. You can define foundation, bed, haunch, side fill, and overlay zones, with different materials, and place culverts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I save a project?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Open the gear icon at the top right. Use Quick Save, or open Manage Saves and tap Save Current at the bottom right, then name it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between Free and Lifetime?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Free includes the basic calculations and the truck load calculator. Lifetime unlocks every tab: cement, culverts, spoil, testing, the planner, geofabric, LiDAR survey, and photos. The comparison is on the features page."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I manage the purchase?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lifetime is not a subscription. The purchase lives with the store account you used. On Android, open Google Play and look under your payments and purchases. On iOS, open the App Store, tap your profile, and look under purchases."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I get a refund?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Refunds follow Google Play or App Store rules. Request one in the store within their window. If that window has passed, email support@engsitetools.com."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "The app will not open, or it crashes on startup",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Force close TrenchCalc and open it again. On Android, clear the app cache under Settings, Apps, TrenchCalc, Storage. Install the latest version from the store. Restart the phone. If it still fails, email support with the device model and app version."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A calculation looks wrong",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Export the project and send it with the contact form or to support@engsitetools.com so it can be checked."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I report a bug or ask for a feature?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use the contact form or the in-app feedback form. Include the device model, the app version, and a screenshot if you have one."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -55,6 +178,15 @@
   <main id="main">
     <section class="page-hero page-hero-compact">
       <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="../tools.html">Tools</a>
+          <span aria-hidden="true">/</span>
+          <a href="index.html">TrenchCalc</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Help</span>
+        </nav>
         <p class="eyebrow">TrenchCalc</p>
         <h1>Help centre.</h1>
         <p class="lead">Setup, calculations, purchases, and what to try when something looks wrong.</p>
@@ -74,7 +206,7 @@
         <article class="prose legal-doc">
           <h2>Getting started</h2>
           <h3>How do I download TrenchCalc?</h3>
-          <p>It is on Google Play for Android and the App Store for iOS. Search for TrenchCalc.</p>
+          <p>It is on <a href="https://play.google.com/store/apps/details?id=com.anonymous.cementcalcapp" target="_blank" rel="noopener noreferrer">Google Play</a> for Android and the <a href="https://apps.apple.com/au/app/trenchcalc/id6751827956" target="_blank" rel="noopener noreferrer">App Store</a> for iOS.</p>
           <h3>Is there a free version?</h3>
           <p>Yes. The free tier covers basic trench volumes, fill type, and wall shape. The one-time Lifetime purchase unlocks cement stabilisation, culverts, LiDAR scanning, soil testing, the construction planner, and photo annotation. See <a href="features.html">features</a> for the full split.</p>
           <h3>What are the system requirements?</h3>
@@ -95,9 +227,9 @@
 
           <h2>Purchases</h2>
           <h3>How do I manage the purchase?</h3>
-          <p>Lifetime is not a subscription. The purchase lives with the store account you used. On Android, open the Play Store and look under your payments and purchases. On iOS, open the App Store, tap your profile, and look under purchases.</p>
+          <p>Lifetime is not a subscription. The purchase lives with the store account you used. On Android, open <a href="https://play.google.com/store/apps/details?id=com.anonymous.cementcalcapp" target="_blank" rel="noopener noreferrer">Google Play</a> and look under your payments and purchases. On iOS, open the <a href="https://apps.apple.com/au/app/trenchcalc/id6751827956" target="_blank" rel="noopener noreferrer">App Store</a>, tap your profile, and look under purchases.</p>
           <h3>Can I get a refund?</h3>
-          <p>Refunds follow Google Play or App Store rules. Request one in the store within their window. If that window has passed, email <a href="mailto:support@engsitetools.com">support@engsitetools.com</a>.</p>
+          <p>Refunds follow <a href="https://play.google.com/store/apps/details?id=com.anonymous.cementcalcapp" target="_blank" rel="noopener noreferrer">Google Play</a> or <a href="https://apps.apple.com/au/app/trenchcalc/id6751827956" target="_blank" rel="noopener noreferrer">App Store</a> rules. Request one in the store within their window. If that window has passed, email <a href="mailto:support@engsitetools.com">support@engsitetools.com</a>.</p>
 
           <h2>Troubleshooting</h2>
           <h3>The app will not open, or it crashes on startup</h3>

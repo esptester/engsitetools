@@ -31,6 +31,57 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <script src="../assets/js/main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://engsitetools.com/trenchcalc/features#webpage",
+        "url": "https://engsitetools.com/trenchcalc/features",
+        "name": "TrenchCalc features — EngSiteTools",
+        "isPartOf": { "@id": "https://engsitetools.com/#website" },
+        "about": { "@id": "https://engsitetools.com/trenchcalc#app" },
+        "breadcrumb": { "@id": "https://engsitetools.com/trenchcalc/features#breadcrumb" },
+        "publisher": { "@id": "https://engsitetools.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://engsitetools.com/trenchcalc/features#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://engsitetools.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://engsitetools.com/tools" },
+          { "@type": "ListItem", "position": 3, "name": "TrenchCalc", "item": "https://engsitetools.com/trenchcalc" },
+          { "@type": "ListItem", "position": 4, "name": "Features", "item": "https://engsitetools.com/trenchcalc/features" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://engsitetools.com/trenchcalc/features#faq",
+        "url": "https://engsitetools.com/trenchcalc/features",
+        "isPartOf": { "@id": "https://engsitetools.com/trenchcalc/features#webpage" },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is it a subscription?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Lifetime is a single purchase through Google Play or the App Store. There is no recurring charge."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do the basic calculations stay available?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Dimensions, fill type, and battered or benched walls stay available. Unlock the advanced features whenever you want."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -55,6 +106,15 @@
   <main id="main">
     <section class="page-hero page-hero-compact">
       <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="../tools.html">Tools</a>
+          <span aria-hidden="true">/</span>
+          <a href="index.html">TrenchCalc</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Features</span>
+        </nav>
         <p class="eyebrow">TrenchCalc</p>
         <h1>What is included.</h1>
         <p class="lead">Basic volumes are available to start. Cement stabilisation, culverts, LiDAR scanning, and photo annotation unlock with Lifetime. No subscription.</p>
@@ -87,7 +147,7 @@
           <li class="module" id="lifetime">
             <span class="module-no">Lifetime</span>
             <h3>The rest of the app</h3>
-            <p>Bought once in the App Store or Google Play. Every feature stays unlocked.</p>
+            <p>Bought once in the <a href="https://apps.apple.com/au/app/trenchcalc/id6751827956" target="_blank" rel="noopener noreferrer">App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.anonymous.cementcalcapp" target="_blank" rel="noopener noreferrer">Google Play</a>. Every feature stays unlocked.</p>
             <ul class="checklist">
               <li>Everything in Free</li>
               <li>Cement stabilisation</li>
@@ -147,7 +207,7 @@
         </div>
         <div class="prose">
           <h3>Is it a subscription?</h3>
-          <p>No. Lifetime is a single purchase through Google Play or the App Store. There is no recurring charge.</p>
+          <p>No. Lifetime is a single purchase through <a href="https://play.google.com/store/apps/details?id=com.anonymous.cementcalcapp" target="_blank" rel="noopener noreferrer">Google Play</a> or the <a href="https://apps.apple.com/au/app/trenchcalc/id6751827956" target="_blank" rel="noopener noreferrer">App Store</a>. There is no recurring charge.</p>
           <h3>Do the basic calculations stay available?</h3>
           <p>Yes. Dimensions, fill type, and battered or benched walls stay available. Unlock the advanced features whenever you want.</p>
         </div>

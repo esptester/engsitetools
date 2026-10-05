@@ -31,6 +31,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://engsitetools.com/tools#webpage",
+        "url": "https://engsitetools.com/tools",
+        "name": "Tools — EngSiteTools",
+        "isPartOf": { "@id": "https://engsitetools.com/#website" },
+        "breadcrumb": { "@id": "https://engsitetools.com/tools#breadcrumb" },
+        "publisher": { "@id": "https://engsitetools.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://engsitetools.com/tools#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://engsitetools.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://engsitetools.com/tools" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -55,6 +79,11 @@
   <main id="main">
     <section class="page-hero">
       <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Tools</span>
+        </nav>
         <p class="eyebrow">Tools</p>
         <h1>Apps for the ground, and a few for <span class="hl">the office</span>.</h1>
         <p class="lead">The site apps are for the crew standing at the work. Deming+ and CFDLite are for planning and analysis at a desk.</p>
