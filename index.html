@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EngSiteTools — Engineering tools for the site</title>
+  <meta name="description" content="EngSiteTools builds practical engineering software for civil and construction crews: fast, accurate calculations and clean records, right where the work happens.">
+  <link rel="canonical" href="https://engsitetools.com/">
+  <meta name="theme-color" content="#f4f2ed">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EngSiteTools">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:title" content="EngSiteTools — Engineering tools for the site">
+  <meta property="og:description" content="Practical engineering software for civil and construction crews: fast, accurate calculations and clean records, right where the work happens.">
+  <meta property="og:url" content="https://engsitetools.com/">
+  <meta property="og:image" content="https://engsitetools.com/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="EngSiteTools: engineering tools, built for the site.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://engsitetools.com/#organization",
+        "name": "EngSiteTools",
+        "url": "https://engsitetools.com/",
+        "logo": "https://engsitetools.com/assets/icons/android-chrome-512x512.png",
+        "email": "support@engsitetools.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://engsitetools.com/#website",
+        "name": "EngSiteTools",
+        "url": "https://engsitetools.com/",
+        "publisher": { "@id": "https://engsitetools.com/#organization" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="EngSiteTools home">
+        <img src="assets/icons/android-chrome-192x192.png" width="34" height="34" alt="">
+        <span>EngSiteTools</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a class="nav-link" href="tools.html">Tools</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="btn btn-dark btn-small" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Engineering software for civil sites</p>
+          <h1>Engineering tools, built for <span class="hl">the site</span>.</h1>
+          <p class="lead">EngSiteTools builds practical software for civil and construction crews. Fast, accurate calculations and clean records, right where the work happens.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tools.html">Explore the tools <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+          </div>
+          <ul class="hero-facts">
+            <li>Earthworks</li>
+            <li>Materials</li>
+            <li>Site records</li>
+          </ul>
+        </div>
+
+        <figure class="calc-card">
+          <div class="calc-head">
+            <span class="calc-app">Section A–A</span>
+            <span class="calc-tag">Benched excavation</span>
+          </div>
+
+          <svg class="xsection" viewBox="0 0 600 290" role="img" aria-labelledby="xs-title">
+            <title id="xs-title">Benched excavation cross-section: 3.0 m deep, 1.2 m base width, 5.2 m wide at ground level</title>
+            <defs>
+              <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                <rect class="hatch-bg" width="10" height="10"/>
+                <line class="hatch-line" x1="0" y1="0" x2="0" y2="10"/>
+              </pattern>
+            </defs>
+
+            <path class="soil" d="M20 70 H170 V120 H220 V170 H270 V220 H330 V170 H380 V120 H430 V70 H580 V290 H20 Z"/>
+            <path class="void" d="M170 70 V120 H220 V170 H270 V220 H330 V170 H380 V120 H430 V70 Z"/>
+            <path class="cut" pathLength="1" d="M20 70 H170 V120 H220 V170 H270 V220 H330 V170 H380 V120 H430 V70 H580"/>
+
+            <!-- Top width -->
+            <g class="dim">
+              <line class="ext" x1="170" y1="36" x2="170" y2="66"/>
+              <line class="ext" x1="430" y1="36" x2="430" y2="66"/>
+              <line x1="170" y1="44" x2="430" y2="44"/>
+              <line class="tick" x1="165" y1="49" x2="175" y2="39"/>
+              <line class="tick" x1="425" y1="49" x2="435" y2="39"/>
+            </g>
+            <text class="dim-text" x="300" y="34" text-anchor="middle">5.2 m</text>
+
+            <!-- Bench -->
+            <g class="dim">
+              <line x1="170" y1="100" x2="220" y2="100"/>
+              <line class="tick" x1="165" y1="105" x2="175" y2="95"/>
+              <line class="tick" x1="215" y1="105" x2="225" y2="95"/>
+            </g>
+            <text class="dim-text" x="195" y="92" text-anchor="middle">1.0</text>
+
+            <!-- Depth -->
+            <g class="dim">
+              <line class="ext" x1="334" y1="220" x2="488" y2="220"/>
+              <line x1="480" y1="70" x2="480" y2="220"/>
+              <line class="tick" x1="475" y1="75" x2="485" y2="65"/>
+              <line class="tick" x1="475" y1="225" x2="485" y2="215"/>
+            </g>
+            <text class="dim-text" x="492" y="150">3.0 m</text>
+
+            <!-- Base width -->
+            <g class="dim">
+              <line class="ext" x1="270" y1="224" x2="270" y2="256"/>
+              <line class="ext" x1="330" y1="224" x2="330" y2="256"/>
+              <line x1="270" y1="248" x2="330" y2="248"/>
+              <line class="tick" x1="265" y1="253" x2="275" y2="243"/>
+              <line class="tick" x1="325" y1="253" x2="335" y2="243"/>
+            </g>
+            <text class="dim-text" x="300" y="276" text-anchor="middle">1.2 m</text>
+
+            <text class="dim-text dim-muted" x="24" y="60">GL ±0.00</text>
+          </svg>
+
+          <dl class="calc-readout">
+            <div><dt>Depth</dt><dd>3.0 m</dd></div>
+            <div><dt>Base width</dt><dd>1.2 m</dd></div>
+            <div><dt>Length</dt><dd>20.0 m</dd></div>
+            <div><dt>Section area</dt><dd>9.6 m²</dd></div>
+          </dl>
+          <div class="calc-total">
+            <span>Excavation volume</span>
+            <strong>192.0 m³</strong>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- What we do -->
+    <section class="section section-white" id="what">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">What we do</p>
+          <h2>Software for the work between the drawings and the ground.</h2>
+          <p>We build focused tools for the jobs site engineers, supervisors and crews do every day. They're quick to pick up and give answers you can check.</p>
+        </div>
+
+        <ol class="modules">
+          <li>
+            <a class="module" href="tools.html#earthworks">
+              <span class="module-no">01</span>
+              <h3>Earthworks</h3>
+              <p>Excavation volumes, wall profiles, cut and fill, worked out from the dimensions in front of you.</p>
+              <span class="module-more">Learn more <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="module" href="tools.html#materials">
+              <span class="module-no">02</span>
+              <h3>Materials</h3>
+              <p>Quantities for fill, aggregates and stabilised mixes, and the truck loads to move them.</p>
+              <span class="module-more">Learn more <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="module" href="tools.html#site-records">
+              <span class="module-no">03</span>
+              <h3>Site records</h3>
+              <p>Diaries, photos and test results captured on site and kept with the job.</p>
+              <span class="module-more">Learn more <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+          <li>
+            <a class="module" href="tools.html#survey">
+              <span class="module-no">04</span>
+              <h3>Survey &amp; measurement</h3>
+              <p>Measure and capture site conditions using the phone already in your pocket.</p>
+              <span class="module-more">Learn more <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="section section-dark" id="approach">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Our approach</p>
+          <h2>Built for the site, not the office.</h2>
+        </div>
+
+        <ul class="features">
+          <li class="feature">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>
+            </span>
+            <h3>Field-first</h3>
+            <p>Designed for phones, gloves and bright sun. Big targets, clear numbers, no clutter.</p>
+          </li>
+          <li class="feature">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 20 20 4"/><path d="M4 14v6h6"/><path d="M14 4h6v6"/></svg>
+            </span>
+            <h3>Show the working</h3>
+            <p>Clear inputs and outputs, so every result can be checked and signed off.</p>
+          </li>
+          <li class="feature">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14 2.5H7a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7.5z"/><path d="M14 2.5v5h5"/><path d="M9 13h6M9 17h6"/></svg>
+            </span>
+            <h3>Ready for the office</h3>
+            <p>Results export cleanly to PDF and CSV for reports, suppliers and the site file.</p>
+          </li>
+          <li class="feature">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+            </span>
+            <h3>Private by default</h3>
+            <p>Your project data stays yours. We collect only what's needed to run the service.</p>
+          </li>
+        </ul>
+
+        <p class="section-foot"><a class="text-link" href="about.html">More on how we work <span aria-hidden="true">→</span></a></p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="container contact-inner">
+        <div>
+          <h2>Got a site problem that needs a tool?</h2>
+          <p>Questions, partnerships or support. Tell us what you're working on.</p>
+        </div>
+        <a class="btn btn-dark btn-large" href="mailto:support@engsitetools.com">support@engsitetools.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html" aria-label="EngSiteTools home">
+            <img src="assets/icons/android-chrome-192x192.png" width="28" height="28" alt="">
+            <span>EngSiteTools</span>
+          </a>
+          <p class="footer-tagline">Engineering tools, built for the site.</p>
+        </div>
+        <nav class="footer-cols" aria-label="Footer">
+          <div>
+            <p class="footer-title">Company</p>
+            <ul>
+              <li><a href="tools.html">Tools</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-title">Legal</p>
+            <ul>
+              <li><a href="engsitetools-privacy.html">Privacy policy</a></li>
+              <li><a href="legal.html">App policies &amp; terms</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-title">Get in touch</p>
+            <ul>
+              <li><a href="mailto:support@engsitetools.com">support@engsitetools.com</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> EngSiteTools</p>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

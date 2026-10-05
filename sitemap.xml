@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://engsitetools.com/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://engsitetools.com/tools</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://engsitetools.com/about</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://engsitetools.com/contact</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://engsitetools.com/legal</loc><lastmod>2026-10-05</lastmod></url>
+
+  <!-- Legal documents keep the URLs used on the previous site and in app store listings -->
+  <url><loc>https://engsitetools.com/engsitetools-privacy</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://engsitetools.com/trenchcalc/privacy</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://engsitetools.com/trenchcalc/terms</loc><lastmod>2026-07-31</lastmod></url>
+  <url><loc>https://engsitetools.com/trenchscanner-privacy</loc><lastmod>2026-08-02</lastmod></url>
+  <url><loc>https://engsitetools.com/sitearea-privacy</loc><lastmod>2026-08-02</lastmod></url>
+  <url><loc>https://engsitetools.com/slopecheck-privacy</loc><lastmod>2026-08-02</lastmod></url>
+  <url><loc>https://engsitetools.com/fastocr-privacy</loc><lastmod>2026-08-02</lastmod></url>
+</urlset>

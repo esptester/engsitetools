@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://engsitetools.com/sitemap.xml

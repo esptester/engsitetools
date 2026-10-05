@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy for FastOCR — EngSiteTools</title>
+  <meta name="description" content="Privacy Policy for the FastOCR iOS app. On-device OCR with no data collection, tracking, or network requests.">
+  <link rel="canonical" href="https://engsitetools.com/fastocr-privacy">
+  <meta name="theme-color" content="#f4f2ed">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EngSiteTools">
+  <meta property="og:locale" content="en_AU">
+  <meta property="og:title" content="Privacy Policy for FastOCR — EngSiteTools">
+  <meta property="og:description" content="Privacy Policy for the FastOCR iOS app. On-device OCR with no data collection, tracking, or network requests.">
+  <meta property="og:url" content="https://engsitetools.com/fastocr-privacy">
+  <meta property="og:image" content="https://engsitetools.com/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="EngSiteTools: engineering tools, built for the site.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="EngSiteTools home">
+        <img src="assets/icons/android-chrome-192x192.png" width="34" height="34" alt="">
+        <span>EngSiteTools</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <a class="nav-link" href="tools.html">Tools</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="btn btn-dark btn-small" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero-compact">
+      <div class="container">
+        <p class="eyebrow">FastOCR</p>
+        <h1>Privacy Policy for FastOCR</h1>
+        <p class="legal-back"><a class="text-link" href="legal.html"><span aria-hidden="true">←</span> All policies &amp; terms</a></p>
+      </div>
+    </section>
+
+    <section class="legal">
+      <div class="container">
+        <article class="prose legal-doc">
+          <p><strong>Last updated:</strong> 12 May 2026</p>
+    <p><strong>Effective date:</strong> 11 May 2026</p>
+
+    <h2>Introduction</h2>
+    <p>This Privacy Policy describes how FastOCR ("the app", "we", "us", or "our") handles information when you use our mobile application. FastOCR is developed and published by EngSiteTools.</p>
+    <p>We have designed FastOCR with privacy as a core principle: the app collects no personal data, performs no tracking, and sends nothing off your device.</p>
+
+    <h2>Summary</h2>
+    <p>FastOCR is a fully on-device optical character recognition (OCR) application. All text recognition happens locally on your iPhone or iPad using Apple's built-in frameworks. No data is transmitted to us, to EngSiteTools, or to any third party.</p>
+
+    <h2>Information We Collect</h2>
+    <p><strong>None.</strong></p>
+    <p>FastOCR does not collect, store, transmit, sell, or share any personal data or user information. Specifically:</p>
+    <ul>
+      <li>We do not collect your name, email address, phone number, or any other personal identifier.</li>
+      <li>We do not require an account, login, or registration.</li>
+      <li>We do not collect device identifiers, advertising identifiers, or any unique IDs.</li>
+      <li>We do not collect location data.</li>
+      <li>We do not collect analytics, usage statistics, or crash reports.</li>
+      <li>We do not use cookies or any similar tracking technology.</li>
+    </ul>
+
+    <h2>How the App Works</h2>
+    <p>FastOCR's complete data flow is as follows:</p>
+    <ol class="steps">
+      <li>You point your device's camera at text you want to recognize.</li>
+      <li>The image is captured using Apple's standard system components (<code>UIImagePickerController</code> or VisionKit's <code>DataScannerViewController</code>).</li>
+      <li>The captured image is held only in your device's memory (RAM) during your current session.</li>
+      <li>Apple's on-device Vision framework (<code>VNRecognizeTextRequest</code>) and VisionKit analyze the image locally and extract text.</li>
+      <li>The recognized text is displayed in the app.</li>
+      <li>You may optionally copy the text to your clipboard or share it through the iOS share sheet.</li>
+      <li>When you close the app, the image and recognized text are discarded from memory.</li>
+    </ol>
+    <p>At no point is the image or recognized text sent to a server or saved to disk.</p>
+
+    <h2>Permissions</h2>
+    <p>FastOCR requests only one permission:</p>
+    <ul>
+      <li><strong>Camera access (<code>NSCameraUsageDescription</code>):</strong> Required to capture images of text for on-device recognition. The purpose string shown by iOS reads: "FastOCR uses the camera to capture text in your surroundings for on-device recognition."</li>
+    </ul>
+    <p>FastOCR does not request access to:</p>
+    <ul>
+      <li>Your photo library</li>
+      <li>Your location</li>
+      <li>Your contacts</li>
+      <li>Your microphone</li>
+      <li>Push notifications</li>
+      <li>Any other system permission</li>
+    </ul>
+
+    <h2>Data Storage</h2>
+    <p>FastOCR does not store any data persistently. The app does not use UserDefaults, the Keychain, CoreData, SwiftData, or any form of file writing. Captured images are not saved to your Photos library or anywhere else on your device. Recognized text exists only in memory until you close the app or navigate away.</p>
+    <p>If you choose to copy recognized text to your clipboard or share it via the iOS share sheet, that action and any subsequent storage is handled by iOS and by the destination app you select — not by FastOCR.</p>
+
+    <h2>Network Activity</h2>
+    <p>FastOCR makes no network requests of any kind. The app contains no networking code (no <code>URLSession</code>, no <code>URLRequest</code>, no HTTP traffic). Your device's text recognition does not require an internet connection, and the app will not attempt to communicate with any remote server.</p>
+
+    <h2>Third-Party Services and SDKs</h2>
+    <p>FastOCR contains no third-party SDKs. The app uses only Apple's first-party system frameworks: SwiftUI, UIKit, Vision, and VisionKit. There is no Firebase, Crashlytics, Sentry, Mixpanel, Amplitude, AdMob, or any other analytics, advertising, or tracking SDK present in the app.</p>
+
+    <h2>Tracking</h2>
+    <p>FastOCR does not track you across apps or websites owned by other companies. Our App Store Connect privacy declaration reflects this: Data Collection: None. Tracking: No.</p>
+
+    <h2>Advertising</h2>
+    <p>FastOCR contains no advertising of any kind.</p>
+
+    <h2>Children's Privacy</h2>
+    <p>FastOCR does not collect any personal information from anyone, including children. The app is safe to use by users of any age in this respect. We comply with the Children's Online Privacy Protection Act (COPPA) and similar regulations by virtue of collecting no data at all.</p>
+
+    <h2>Your Rights</h2>
+    <p>Because FastOCR collects no personal data, there is no personal information for us to access, correct, delete, export, or restrict. Privacy rights frameworks such as the GDPR (EU), CCPA/CPRA (California), and the Australian Privacy Act apply only to data that is collected — and we collect none.</p>
+
+    <h2>Encryption and Export Compliance</h2>
+    <p>FastOCR does not use any non-exempt encryption (<code>ITSAppUsesNonExemptEncryption</code> is set to false).</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>If the app's functionality changes in a way that affects this policy, we will update this document and revise the "Last updated" date at the top. Material changes will be reflected in the next App Store release.</p>
+
+    <h2>Contact</h2>
+    <p>If you have any questions about this Privacy Policy or about FastOCR's privacy practices, please contact:</p>
+    <p><strong>EngSiteTools</strong><br>
+    <a href="mailto:support@engsitetools.com">support@engsitetools.com</a></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="index.html" aria-label="EngSiteTools home">
+            <img src="assets/icons/android-chrome-192x192.png" width="28" height="28" alt="">
+            <span>EngSiteTools</span>
+          </a>
+          <p class="footer-tagline">Engineering tools, built for the site.</p>
+        </div>
+        <nav class="footer-cols" aria-label="Footer">
+          <div>
+            <p class="footer-title">Company</p>
+            <ul>
+              <li><a href="tools.html">Tools</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-title">Legal</p>
+            <ul>
+              <li><a href="engsitetools-privacy.html">Privacy policy</a></li>
+              <li><a href="legal.html">App policies &amp; terms</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="footer-title">Get in touch</p>
+            <ul>
+              <li><a href="mailto:support@engsitetools.com">support@engsitetools.com</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span data-year>2026</span> EngSiteTools</p>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
