@@ -927,6 +927,18 @@ a.module:hover .module-more span { transform: translateX(3px); }
 .site-footer .brand { color: #fff; font-size: 17px; }
 .site-footer .brand img { width: 28px; height: 28px; }
 .footer-tagline { max-width: 22em; margin-top: 14px; font-size: 14px; }
+.social-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.social-links a {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--dark-line);
+  border-radius: 8px;
+}
+.social-links a:hover { color: #fff; border-color: rgba(255, 255, 255, 0.45); }
+.social-links svg { width: 16px; height: 16px; display: block; }
 .footer-cols { display: flex; flex-wrap: wrap; gap: 32px 72px; }
 .footer-title {
   color: #fff;
