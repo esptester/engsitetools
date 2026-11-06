@@ -1,0 +1,9 @@
+.git
+.gitignore
+.wrangler
+.cursor
+.dev.vars*
+.env*
+node_modules
+worker
+wrangler.jsonc

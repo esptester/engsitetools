@@ -1,0 +1,5 @@
+# Wrangler's local state, and local-only settings (never commit these)
+.wrangler/
+.dev.vars*
+.env*
+node_modules/

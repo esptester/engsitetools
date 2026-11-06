@@ -1,0 +1,18 @@
+# URLs from the previous site (before the October 2026 rebuild). Permanent (301)
+# redirects keep old bookmarks, links and search results working.
+# Format: https://developers.cloudflare.com/workers/static-assets/redirects/
+/products.html                      /tools                         301
+/roadmap.html                       /tools                         301
+/changelog.html                     /tools                         301
+/fastocr.html                       /fastocr                       301
+/sitearea.html                      /sitearea                      301
+/slopecheck.html                    /slopecheck                    301
+/trenchscanner.html                 /trenchscanner                 301
+/trenchcalc/business.html           /trenchcalc/features           301
+/trenchcalc/business-pricing.html   /trenchcalc/features           301
+
+# The 3D methodology animation service became earthworks haulage visualisation (November 2026).
+/methodology-animation              /earthworks-visualisation           301
+/methodology-animation.html         /earthworks-visualisation           301
+/methodology-animation-privacy      /earthworks-visualisation-privacy   301
+/methodology-animation-privacy.html /earthworks-visualisation-privacy   301

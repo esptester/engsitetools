@@ -37,7 +37,7 @@
 
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a class="brand" href="../index.html" aria-label="EngSiteTools home">
+      <a class="brand" href="/" aria-label="EngSiteTools home">
         <img src="../assets/icons/android-chrome-192x192.png" width="34" height="34" alt="">
         <span>EngSiteTools</span>
       </a>
@@ -45,9 +45,10 @@
         <span class="nav-toggle-icon" aria-hidden="true"></span>
       </button>
       <nav class="nav" id="site-nav" aria-label="Main">
-        <a class="nav-link" href="../tools.html">Tools</a>
-        <a class="nav-link" href="../about.html">About</a>
-        <a class="btn btn-dark btn-small" href="../contact.html">Contact</a>
+        <a class="nav-link" href="/tools">Tools</a>
+        <a class="nav-link" href="/earthworks-visualisation">Visualisation</a>
+        <a class="nav-link" href="/about">About</a>
+        <a class="btn btn-dark btn-small" href="/contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -57,14 +58,14 @@
       <div class="container">
         <p class="eyebrow">TrenchCalc</p>
         <h1>TrenchCalc Privacy Policy</h1>
-        <p class="legal-back"><a class="text-link" href="../legal.html"><span aria-hidden="true">←</span> All policies &amp; terms</a></p>
+        <p class="legal-back"><a class="text-link" href="/legal"><span aria-hidden="true">←</span> All policies &amp; terms</a></p>
       </div>
     </section>
 
     <section class="legal">
       <div class="container">
         <article class="prose legal-doc">
-          <p class="effective-date">Effective Date: January 29, 2026</p>
+          <p class="effective-date">Effective Date: November 6, 2026</p>
 
     <p>
       TrenchCalc ("the app") is a utility tool designed for engineering professionals to calculate trench volumes and backfill estimates. We value your privacy and only collect the minimum data necessary to deliver core functionality.
@@ -221,7 +222,7 @@
       Your browser settings may allow you to transmit a "Do Not Track" signal when you visit various websites. Like many websites, our website is not designed to respond to "Do Not Track" signals received from browsers. To learn more about "Do Not Track" signals, you can visit <a href="https://www.allaboutdnt.com/" target="_blank" rel="noopener noreferrer">www.allaboutdnt.com</a>.
     </p>
     <p>
-      The TrenchCalc mobile apps themselves do not set cookies or similar tracking technologies beyond device-level preferences. Our public website uses only the cookies and scripts disclosed in the EngSiteTools privacy policy (e.g., reCAPTCHA, analytics if enabled, cookie-preference storage). You can manage those preferences through the cookie banner on the website.
+      The TrenchCalc mobile apps themselves do not set cookies or similar tracking technologies beyond device-level preferences. Our public website does not use analytics, advertising or tracking cookies. The services it does use, including Cloudflare Turnstile on our contact form, are described in the <a href="/engsitetools-privacy">EngSiteTools Privacy Policy</a>.
     </p>
 
     <h2 id="consequences">Consequences of Not Providing Information</h2>
@@ -328,8 +329,8 @@
     </p>
     <ul>
       <li><strong>Australia (Sydney region):</strong> Firestore database storage and Cloud Functions hosting the TrenchCalc APIs.</li>
-      <li><strong>United States:</strong> Firebase Authentication infrastructure, Google/Apple identity services, RevenueCat, Stripe, Resend, Formsubmit, and Vercel’s platform operations.</li>
-      <li><strong>European Union:</strong> Open-Meteo (Germany) for weather data and selected CDN/edge locations (including Vercel and Google reCAPTCHA).</li>
+      <li><strong>United States:</strong> Firebase Authentication infrastructure, Google/Apple identity services, RevenueCat, Stripe, Resend, and Cloudflare (website hosting and contact form).</li>
+      <li><strong>European Union:</strong> Open-Meteo (Germany) for weather data and selected CDN/edge locations (including Cloudflare's network).</li>
     </ul>
     <p>
       We implement contractual and organisational safeguards (including Data Processing Agreements, Standard Contractual Clauses where applicable, vendor due diligence, and data minimisation) and comply with the Australian Privacy Act 1988 and the GDPR.
@@ -461,22 +462,10 @@
           <td><a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy</a> &middot; <a href="https://resend.com/legal/dpa" target="_blank" rel="noopener noreferrer">Resend DPA (SCCs)</a>.</td>
         </tr>
         <tr>
-          <td><strong>Formsubmit</strong></td>
-          <td>Routes contact form submissions to our support inbox (no storage on their servers).</td>
-          <td>United States.</td>
-          <td><a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">Privacy</a> (SCCs available on request from Formsubmit).</td>
-        </tr>
-        <tr>
-          <td><strong>Google reCAPTCHA</strong></td>
-          <td>Spam/bot detection for sign-up and contact flows (device/usage telemetry).</td>
-          <td>Global infrastructure (including United States and EU).</td>
-          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy</a> &middot; <a href="https://cloud.google.com/terms/data-processing-terms" target="_blank" rel="noopener noreferrer">Google SCCs</a>.</td>
-        </tr>
-        <tr>
-          <td><strong>Vercel</strong></td>
-          <td>Hosting for marketing site and API edge network (logs, traffic metadata).</td>
-          <td>Global edge network (including United States and EU).</td>
-          <td><a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy</a> &middot; <a href="https://vercel.com/legal/dpa" target="_blank" rel="noopener noreferrer">Vercel DPA / SCCs</a>.</td>
+          <td><strong>Cloudflare</strong></td>
+          <td>Hosting and security for our website (request logs, traffic metadata), contact form bot checks (Turnstile), and delivery of contact form messages to our support inbox.</td>
+          <td>Global network (including Australia, United States and EU).</td>
+          <td><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Privacy</a> &middot; <a href="https://www.cloudflare.com/cloudflare-customer-dpa/" target="_blank" rel="noopener noreferrer">Cloudflare DPA / SCCs</a>.</td>
         </tr>
         <tr>
           <td><strong>Apple &amp; Google App Stores / Sign-In</strong></td>
@@ -496,8 +485,7 @@
       <li><strong>Stripe:</strong> Retains payment and transaction records for as long as needed to meet financial, tax, and anti-fraud obligations (typically 7+ years).</li>
       <li><strong>Open-Meteo:</strong> Processes latitude/longitude in real time for forecasts and does not retain personal identifiers.</li>
       <li><strong>Resend:</strong> Stores transactional email metadata/content only as needed to deliver messages and meet legal requirements.</li>
-      <li><strong>Formsubmit:</strong> Forwards contact form contents to us and does not store them on its servers.</li>
-      <li><strong>Google reCAPTCHA / Vercel:</strong> Collect telemetry/traffic metadata as described in their policies for security and operations, following their own retention schedules.</li>
+      <li><strong>Cloudflare:</strong> Processes website request data and contact form messages to serve the website and deliver messages to us, and keeps security and traffic logs according to its own retention schedules.</li>
     </ul>
     <p>
       We implement additional safeguards by executing the linked data-processing agreements, reviewing each provider’s security posture, limiting shared data to the minimum necessary, and continuously monitoring for changes in processing locations or legal requirements (including APP 8, GDPR/UK GDPR, and other cross-border frameworks).
@@ -588,7 +576,7 @@
     <div class="container">
       <div class="footer-top">
         <div>
-          <a class="brand" href="../index.html" aria-label="EngSiteTools home">
+          <a class="brand" href="/" aria-label="EngSiteTools home">
             <img src="../assets/icons/android-chrome-192x192.png" width="28" height="28" alt="">
             <span>EngSiteTools</span>
           </a>
@@ -607,16 +595,17 @@
           <div>
             <p class="footer-title">Company</p>
             <ul>
-              <li><a href="../tools.html">Tools</a></li>
-              <li><a href="../about.html">About</a></li>
-              <li><a href="../contact.html">Contact</a></li>
+              <li><a href="/tools">Tools</a></li>
+              <li><a href="/articles">Articles</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
           <div>
             <p class="footer-title">Legal</p>
             <ul>
-              <li><a href="../engsitetools-privacy.html">Privacy policy</a></li>
-              <li><a href="../legal.html">App policies &amp; terms</a></li>
+              <li><a href="/engsitetools-privacy">Privacy policy</a></li>
+              <li><a href="/legal">App policies &amp; terms</a></li>
             </ul>
           </div>
           <div>

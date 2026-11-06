@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact — EngSiteTools</title>
-  <meta name="description" content="Questions, partnerships or support. Email the EngSiteTools team at support@engsitetools.com.">
+  <meta name="description" content="Questions, partnerships, support or an earthworks job. Send the EngSiteTools team a message, or email support@engsitetools.com.">
   <link rel="canonical" href="https://engsitetools.com/contact">
   <meta name="theme-color" content="#f4f2ed">
 
@@ -31,6 +31,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/contact.js" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -61,7 +62,7 @@
 
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="EngSiteTools home">
+      <a class="brand" href="/" aria-label="EngSiteTools home">
         <img src="assets/icons/android-chrome-192x192.png" width="34" height="34" alt="">
         <span>EngSiteTools</span>
       </a>
@@ -69,9 +70,10 @@
         <span class="nav-toggle-icon" aria-hidden="true"></span>
       </button>
       <nav class="nav" id="site-nav" aria-label="Main">
-        <a class="nav-link" href="tools.html">Tools</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="btn btn-dark btn-small" href="contact.html" aria-current="page">Contact</a>
+        <a class="nav-link" href="/tools">Tools</a>
+        <a class="nav-link" href="/earthworks-visualisation">Visualisation</a>
+        <a class="nav-link" href="/about">About</a>
+        <a class="btn btn-dark btn-small" href="/contact" aria-current="page">Contact</a>
       </nav>
     </div>
   </header>
@@ -80,42 +82,136 @@
     <section class="page-hero">
       <div class="container">
         <nav class="crumbs" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
+          <a href="/">Home</a>
           <span aria-hidden="true">/</span>
           <span aria-current="page">Contact</span>
         </nav>
         <p class="eyebrow">Contact</p>
         <h1>Tell us what you're <span class="hl">working on</span>.</h1>
-        <p class="lead">Questions, partnerships or support. Email is the quickest way to reach us, and it goes straight to the team.</p>
+        <p class="lead">Questions, partnerships, support or an earthworks job. Send us a message and it goes straight to the team.</p>
       </div>
     </section>
 
-    <section class="section section-white" aria-labelledby="email-title">
-      <div class="container">
-        <div class="email-card">
-          <div>
-            <p class="email-card-label" id="email-title">Email us</p>
-            <a class="email-card-address" href="mailto:support@engsitetools.com">support@engsitetools.com</a>
+    <section class="section section-white" id="message" aria-labelledby="message-title">
+      <div class="container contact-layout">
+        <div class="form-panel">
+          <div data-form-body>
+            <h2 class="form-title" id="message-title">Send us a message</h2>
+            <p class="form-intro">We'll reply by email. Every field is required unless it says optional.</p>
+
+            <form class="contact-form" id="contact-form" action="/api/contact" method="post">
+              <div class="field-row">
+                <div class="field">
+                  <label for="cf-name">Name</label>
+                  <input id="cf-name" name="name" type="text" autocomplete="name" maxlength="100" required>
+                </div>
+                <div class="field">
+                  <label for="cf-email">Email</label>
+                  <input id="cf-email" name="email" type="email" autocomplete="email" maxlength="254" required>
+                </div>
+              </div>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="cf-company">Company <span class="field-optional">(optional)</span></label>
+                  <input id="cf-company" name="company" type="text" autocomplete="organization" maxlength="120">
+                </div>
+                <div class="field">
+                  <label for="cf-topic">What's it about?</label>
+                  <select id="cf-topic" name="topic" required>
+                    <option value="" selected disabled>Choose a topic</option>
+                    <option value="support">Support</option>
+                    <option value="partnership">Partnership</option>
+                    <option value="idea">Tool idea</option>
+                    <option value="earthworks">Earthworks visualisation</option>
+                    <option value="other">Something else</option>
+                  </select>
+                </div>
+              </div>
+
+              <fieldset class="field-group" data-earthworks-fields hidden disabled>
+                <legend>About the job</legend>
+                <div class="field">
+                  <label for="cf-works">Type of earthworks</label>
+                  <input id="cf-works" name="works" type="text" maxlength="200" placeholder="e.g. bulk earthworks" required>
+                </div>
+                <div class="field-row">
+                  <div class="field">
+                    <label for="cf-location">Location</label>
+                    <input id="cf-location" name="location" type="text" maxlength="120" placeholder="Suburb or region" required>
+                  </div>
+                  <div class="field">
+                    <label for="cf-timing">When you need it <span class="field-optional">(optional)</span></label>
+                    <input id="cf-timing" name="timing" type="text" maxlength="120" placeholder="e.g. tender closes 20 Nov">
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="field">
+                <label for="cf-message">Message <span class="field-optional" data-message-optional hidden>(optional)</span></label>
+                <textarea id="cf-message" name="message" rows="6" maxlength="5000" required></textarea>
+              </div>
+
+              <div class="hp" aria-hidden="true">
+                <label for="cf-extra">Leave this field empty</label>
+                <input id="cf-extra" name="extra_info" type="text" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="turnstile-slot" data-turnstile data-sitekey="0x4AAAAAAF2ZvI1w6sksl2aW"></div>
+
+              <div class="form-actions">
+                <button class="btn btn-dark btn-large" type="submit" disabled>Send message</button>
+                <p class="form-note">We only use your details to reply to you. <a href="/engsitetools-privacy">Privacy policy</a></p>
+              </div>
+              <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+              <noscript><p class="form-status is-error">The form needs JavaScript. Please email us at <a href="mailto:support@engsitetools.com">support@engsitetools.com</a> instead.</p></noscript>
+            </form>
           </div>
-          <div class="email-card-actions">
-            <a class="btn btn-primary" href="mailto:support@engsitetools.com">Write an email <span aria-hidden="true">→</span></a>
-            <button class="btn btn-on-dark" type="button" data-copy="support@engsitetools.com" hidden>Copy address</button>
+
+          <div class="form-success" data-form-success hidden>
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </span>
+            <h2 class="form-title" tabindex="-1" data-success-title>Thanks. Your message is on its way.</h2>
+            <p data-success-text>We'll reply by email.</p>
+            <button class="btn btn-outline" type="button" data-form-again>Send another message</button>
           </div>
         </div>
 
+        <aside class="contact-aside" aria-label="Other ways to reach us">
+          <div class="email-card">
+            <div>
+              <p class="email-card-label">Prefer email?</p>
+              <a class="email-card-address" href="mailto:support@engsitetools.com">support@engsitetools.com</a>
+            </div>
+            <div class="email-card-actions">
+              <a class="btn btn-primary" href="mailto:support@engsitetools.com">Write an email <span aria-hidden="true">→</span></a>
+              <button class="btn btn-on-dark" type="button" data-copy="support@engsitetools.com" hidden>Copy address</button>
+            </div>
+          </div>
+          <div class="aside-note">
+            <h3>Earthworks visualisation</h3>
+            <p>Choose “Earthworks visualisation” as the topic and tell us about the job. We'll arrange a time to meet in Perth. <a href="/earthworks-visualisation">About the service</a></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="topics-title">
+      <div class="container">
         <div class="section-head">
           <p class="eyebrow">What's it about?</p>
-          <h2>Pick a topic and we'll start the email for you.</h2>
+          <h2 id="topics-title">What to include, so we can help first time.</h2>
         </div>
 
-        <ul class="cards">
+        <ul class="cards cards-2">
           <li class="card">
             <span class="feature-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6"/><path d="M12 17h.01"/></svg>
             </span>
             <h3>Support</h3>
-            <p>Something not working, or not sure how a tool handles a case? Tell us which tool you were using, what device you're on, and include a screenshot if you can.</p>
-            <a class="text-link" href="mailto:support@engsitetools.com?subject=Support%20request">Email support <span aria-hidden="true">→</span></a>
+            <p>Something not working, or not sure how a tool handles a case? Tell us which tool you were using, what device you're on and what happened. To send screenshots, email us instead.</p>
+            <a class="text-link" href="/contact?topic=support#message" data-topic="support">Send a support request <span aria-hidden="true">→</span></a>
           </li>
           <li class="card">
             <span class="feature-icon" aria-hidden="true">
@@ -123,7 +219,7 @@
             </span>
             <h3>Partnerships</h3>
             <p>Contractors, suppliers and software teams who'd like to work with us. Tell us a little about your business and what you have in mind.</p>
-            <a class="text-link" href="mailto:support@engsitetools.com?subject=Partnership%20enquiry">Start a conversation <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="/contact?topic=partnership#message" data-topic="partnership">Start a conversation <span aria-hidden="true">→</span></a>
           </li>
           <li class="card">
             <span class="feature-icon" aria-hidden="true">
@@ -131,7 +227,15 @@
             </span>
             <h3>Tool ideas</h3>
             <p>Got a site problem that needs a tool? Describe the calculation you keep doing by hand, or the record that always goes missing.</p>
-            <a class="text-link" href="mailto:support@engsitetools.com?subject=Tool%20idea">Suggest a tool <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="/contact?topic=idea#message" data-topic="idea">Suggest a tool <span aria-hidden="true">→</span></a>
+          </li>
+          <li class="card">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10 9.5v5l4.5-2.5z"/></svg>
+            </span>
+            <h3>Earthworks visualisation</h3>
+            <p>Want your earthworks methodology and haulage numbers visualised? Tell us the type of works, the location and when you need it, and we'll arrange a time to meet. <a href="/earthworks-visualisation">About the service</a>.</p>
+            <a class="text-link" href="/contact?topic=earthworks#message" data-topic="earthworks">Contact sales <span aria-hidden="true">→</span></a>
           </li>
         </ul>
       </div>
@@ -142,7 +246,7 @@
     <div class="container">
       <div class="footer-top">
         <div>
-          <a class="brand" href="index.html" aria-label="EngSiteTools home">
+          <a class="brand" href="/" aria-label="EngSiteTools home">
             <img src="assets/icons/android-chrome-192x192.png" width="28" height="28" alt="">
             <span>EngSiteTools</span>
           </a>
@@ -161,16 +265,17 @@
           <div>
             <p class="footer-title">Company</p>
             <ul>
-              <li><a href="tools.html">Tools</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="/tools">Tools</a></li>
+              <li><a href="/articles">Articles</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
           <div>
             <p class="footer-title">Legal</p>
             <ul>
-              <li><a href="engsitetools-privacy.html">Privacy policy</a></li>
-              <li><a href="legal.html">App policies &amp; terms</a></li>
+              <li><a href="/engsitetools-privacy">Privacy policy</a></li>
+              <li><a href="/legal">App policies &amp; terms</a></li>
             </ul>
           </div>
           <div>
