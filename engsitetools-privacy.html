@@ -27,9 +27,8 @@
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/archivo-v25-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-v20-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/main.js" defer></script>
 </head>
@@ -46,7 +45,7 @@
         <span class="nav-toggle-icon" aria-hidden="true"></span>
       </button>
       <nav class="nav" id="site-nav" aria-label="Main">
-        <a class="nav-link" href="/earthworks-visualisation">Services</a>
+        <a class="nav-link" href="/services">Services</a>
         <a class="nav-link" href="/tools">Apps</a>
         <a class="nav-link" href="/articles">Articles</a>
         <a class="nav-link" href="/about">About</a>
@@ -68,7 +67,7 @@
       <div class="container">
         <article class="prose legal-doc">
           <p><strong>Effective Date:</strong> January 7, 2026</p>
-    <p><strong>Last Updated:</strong> November 6, 2026</p>
+    <p><strong>Last Updated:</strong> November 7, 2026</p>
 
   <p><strong>EngSiteTools</strong> values your privacy. This policy explains what data we collect, how it is used, and your rights as a user. We comply with the <strong>Australian Privacy Act 1988 (Cth)</strong>, the <strong>Australian Privacy Principles (APPs)</strong>, and other applicable privacy laws. This policy applies to EngSiteTools and its products. Our product <strong>TrenchCalc™</strong> has its own dedicated privacy policy, available at <a href="/trenchcalc/privacy">engsitetools.com/trenchcalc/privacy.html</a>. Each of our other apps also has its own privacy policy, listed on our <a href="/legal">Privacy &amp; legal</a> page.</p>
 
@@ -102,7 +101,6 @@
 
   <h3>Website Services</h3>
   <ul>
-    <li><strong>Google Fonts</strong> – to deliver the fonts used on our website. When a page loads, your browser requests the fonts from Google's servers, so Google receives your IP address and browser information. Requests to Google Fonts do not use cookies. See <a href="https://developers.google.com/fonts/faq/privacy" target="_blank" rel="noopener noreferrer">Google Fonts privacy FAQ</a>.</li>
     <li><strong>Cloudflare</strong> – to host and deliver our website, protect it from attacks, check that contact form messages come from people rather than bots (Cloudflare Turnstile), and deliver those messages to our inbox. Cloudflare processes standard request data (such as IP addresses) for security and reliability. See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare's Privacy Policy</a>.</li>
   </ul>
 
@@ -177,14 +175,13 @@
   <h2>Data Processors</h2>
   <p>We use the following third-party services in connection with our website:</p>
   <ul>
-    <li><strong>Google Fonts:</strong> Font delivery (Google receives your IP address and browser information when fonts are requested)</li>
     <li><strong>Cloudflare:</strong> Website hosting, delivery, and security (standard request data and server logs), contact form bot checks (Turnstile), and delivery of contact form messages to our inbox</li>
   </ul>
 
   <h2>International Data Transfers</h2>
   <p>Your personal information may be transferred to, and processed in, countries outside your country of residence when we use the following providers:</p>
   <ul>
-    <li><strong>United States and other countries:</strong> Google Fonts (font delivery) and Cloudflare (website hosting, contact form bot checks and message delivery), which operates a global network.</li>
+    <li><strong>United States and other countries:</strong> Cloudflare (website hosting, contact form bot checks and message delivery), which operates a global network.</li>
   </ul>
   <p>Where required, we rely on appropriate safeguards such as Standard Contractual Clauses (SCCs) for EU/UK data transfers, our providers' data processing terms, and compliance with applicable privacy laws.</p>
 
@@ -242,6 +239,7 @@
             <p class="footer-title">Services</p>
             <ul>
               <li><a href="/earthworks-visualisation">Earthworks visualisation</a></li>
+              <li><a href="/3d-equipment-models">3D equipment models</a></li>
             </ul>
           </div>
           <div>

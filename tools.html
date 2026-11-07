@@ -27,9 +27,8 @@
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="/assets/fonts/archivo-v25-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-v20-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
   <script src="assets/js/main.js" defer></script>
   <script type="application/ld+json">
@@ -70,7 +69,7 @@
         <span class="nav-toggle-icon" aria-hidden="true"></span>
       </button>
       <nav class="nav" id="site-nav" aria-label="Main">
-        <a class="nav-link" href="/earthworks-visualisation">Services</a>
+        <a class="nav-link" href="/services">Services</a>
         <a class="nav-link" href="/tools" aria-current="page">Apps</a>
         <a class="nav-link" href="/articles">Articles</a>
         <a class="nav-link" href="/about">About</a>
@@ -146,7 +145,7 @@
           <p class="eyebrow">In the office</p>
           <h2 id="office-title">For planning and hiring at a desk.</h2>
         </div>
-        <ol class="modules modules-3">
+        <ol class="modules modules-2">
           <li class="module" id="demingplus">
             <span class="module-no">01</span>
             <h3><img class="module-icon" src="assets/img/apps/demingplus.png" width="36" height="36" alt="">Deming+</h3>
@@ -169,7 +168,7 @@
           <p class="eyebrow">Calculators</p>
           <h2 id="calculators-title">Free calculators, in the browser.</h2>
         </div>
-        <ol class="modules modules-apps">
+        <ol class="modules">
           <li>
             <a class="module" href="/articles/how-to-calculate-trench-volume#calculator">
               <span class="module-no">01</span>
@@ -239,22 +238,16 @@
       </div>
     </section>
 
-    <section class="section section-white" id="services" aria-labelledby="services-title">
+    <section class="section section-white section-tight" id="services" aria-labelledby="services-title">
       <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">Services</p>
-          <h2 id="services-title">Services.</h2>
-        </div>
-        <ol class="modules modules-2">
-          <li>
-            <a class="module" href="/earthworks-visualisation">
-              <span class="module-no">01</span>
-              <h3>Earthworks visualisation</h3>
-              <p>3D earthworks visualisation, based in Perth, Western Australia.</p>
-              <span class="module-more">See earthworks visualisation <span aria-hidden="true">→</span></span>
-            </a>
-          </li>
-        </ol>
+        <a class="crosslink" href="/earthworks-visualisation">
+          <span class="crosslink-text">
+            <span class="eyebrow">Services</span>
+            <span class="crosslink-title" id="services-title">Earthworks visualisation</span>
+            <span class="crosslink-sub">3D earthworks visualisation, based in Perth, Western Australia.</span>
+          </span>
+          <span class="btn btn-dark">See earthworks visualisation <span aria-hidden="true">&rarr;</span></span>
+        </a>
       </div>
     </section>
 
@@ -293,6 +286,7 @@
             <p class="footer-title">Services</p>
             <ul>
               <li><a href="/earthworks-visualisation">Earthworks visualisation</a></li>
+              <li><a href="/3d-equipment-models">3D equipment models</a></li>
             </ul>
           </div>
           <div>

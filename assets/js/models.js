@@ -30,6 +30,8 @@
       }
     }, { rootMargin: '150px 0px' });
     io.observe(root);
+    // held on the element, so the browser can't throw the observer away before it fires
+    root.mvLoader = io;
   };
   // Wait for the page itself to finish first, so the 3D never slows the first view
   if (document.readyState === 'complete') watch();

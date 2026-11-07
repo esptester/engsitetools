@@ -16,6 +16,7 @@ const TOPICS = {
   partnership: "Partnership",
   idea: "Tool idea",
   earthworks: "Earthworks visualisation",
+  equipment: "3D equipment models",
   other: "General enquiry",
 };
 

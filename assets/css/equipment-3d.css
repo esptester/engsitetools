@@ -1,0 +1,353 @@
+/* 3D equipment model viewer (3d-equipment-models page). Everything is scoped to .xv.
+   Selection is blue, so a chosen part stands out against the orange machine. */
+.xv {
+  --xv-plate: #e7eae6;
+  --xv-muted: #61656d; /* the site's muted grey, a shade darker so small labels on the grey stage stay readable */
+  --xv-rule: var(--line);
+  --xv-rule-2: #e8e5dd;
+  --xv-select: #0b72a8;
+  --xv-select-soft: rgba(11, 114, 168, 0.1);
+  --xv-grid: #6e787e;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02), 0 28px 60px -28px rgba(22, 23, 26, 0.3);
+}
+.xv [hidden] { display: none !important; }
+
+/* Title bar: the machine and its key figures */
+.xv-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--xv-rule);
+}
+.xv-title { margin: 0; font-family: var(--font-head); font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+.xv-sub { margin: 2px 0 0; color: var(--muted); font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+.xv-facts { display: flex; flex-wrap: wrap; margin: 0; border: 1px solid var(--xv-rule); border-radius: 10px; }
+.xv-facts > div { padding: 6px 14px 7px; border-left: 1px solid var(--xv-rule); }
+.xv-facts > div:first-child { border-left: 0; }
+.xv-facts dt { color: var(--muted); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+.xv-facts dd { margin: 1px 0 0; font-family: var(--font-mono); font-size: 14px; font-weight: 500; white-space: nowrap; }
+
+/* ---------- Workbench: the 3D stage beside the parts panel ---------- */
+.xv .bench { display: grid; grid-template-columns: minmax(0, 1fr) 360px; min-height: 0; }
+.xv .stage-col { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+.xv .stage {
+  position: relative;
+  height: clamp(420px, 66vh, 620px);
+  overflow: hidden;
+  background: var(--xv-plate);
+}
+/* the still shown before the 3D starts; anchored low and left so the machine stays in frame on any stage shape */
+.xv-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 25% 80%; }
+.xv.is-live .xv-poster { display: none; }
+.xv .stage canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab;
+}
+.xv .stage canvas.dragging { cursor: grabbing; }
+.xv .stage canvas.pointing { cursor: pointer; }
+.xv .leaders, .xv .tags, .xv .dims { position: absolute; inset: 0; pointer-events: none; }
+.xv .leaders { width: 100%; height: 100%; overflow: visible; }
+.xv .leaders line { stroke: var(--ink-2); stroke-width: 1; }
+.xv .leaders line.on { stroke: var(--xv-select); stroke-width: 1.5; }
+.xv .leaders circle { fill: var(--ink-2); }
+.xv .leaders circle.on { fill: var(--xv-select); }
+.xv .tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  padding: 0;
+  border: 1.5px solid var(--ink-2);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  pointer-events: auto;
+  cursor: pointer;
+  will-change: transform;
+}
+.xv .tag:hover, .xv .tag.hot { border-color: var(--xv-select); color: var(--xv-select); }
+.xv .tag.on { background: var(--xv-select); border-color: var(--xv-select); color: #fff; }
+.xv .dim-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1px 6px;
+  background: var(--xv-plate);
+  border: 1px solid var(--xv-select);
+  color: var(--xv-select);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.xv .tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.xv .tip b { margin-right: 6px; font-family: var(--font-mono); font-weight: 500; opacity: 0.7; }
+
+/* System filter (top left) and view tools (top right) */
+.xv .sysbar {
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  left: 12px;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  pointer-events: none;
+}
+.xv .sysbtn {
+  padding: 5px 11px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink-2);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.xv .sysbtn:hover { border-color: var(--ink); color: var(--ink); }
+.xv .sysbtn[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.xv .viewtools { position: absolute; top: 10px; right: 10px; z-index: 2; display: flex; flex-direction: column; gap: 6px; }
+.xv .vt {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink-2);
+  cursor: pointer;
+}
+.xv .vt:hover { border-color: var(--ink); color: var(--ink); }
+.xv .vt[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.xv .vt svg { display: block; width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.xv .titleblock {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: grid;
+  grid-template-columns: auto auto;
+  border: 1px solid var(--line-strong);
+  background: var(--xv-plate);
+  color: var(--ink-2);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.3;
+  pointer-events: none;
+}
+.xv .titleblock span { padding: 3px 8px; border-top: 1px solid var(--xv-rule); border-left: 1px solid var(--xv-rule); }
+.xv .titleblock span:nth-child(-n + 2) { border-top: 0; }
+.xv .titleblock span:nth-child(odd) { border-left: 0; color: var(--xv-muted); letter-spacing: 0.06em; text-transform: uppercase; }
+.xv .hint { position: absolute; bottom: 10px; left: 12px; margin: 0; color: var(--xv-muted); font-size: 12.5px; pointer-events: none; }
+.xv:not(.is-live) .viewtools,
+.xv:not(.is-live) .hint { display: none; }
+/* before the 3D starts: a message, or on phones a button to open it. It sits in the empty space above the machine. */
+.xv .notice {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: start center;
+  padding: 24px;
+  color: var(--ink-2);
+  font-size: 14px;
+  text-align: center;
+}
+.xv .notice p { margin: 0; padding: 8px 14px; border-radius: 8px; background: rgba(255, 255, 255, 0.92); }
+.xv .notice .btn { box-shadow: 0 10px 30px -10px rgba(22, 23, 26, 0.45); }
+.xv.is-loading .notice .btn { display: none; }
+.xv:not(.is-loading) .notice [data-xv-loading] { display: none; }
+.xv.is-failed .notice { place-items: center; background: rgba(231, 234, 230, 0.92); }
+
+/* Machine sliders under the stage */
+.xv .controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 26px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--xv-rule);
+}
+.xv .ctl { display: grid; flex: 1 1 170px; grid-template-columns: auto auto; gap: 2px 10px; min-width: 150px; }
+.xv .ctl label { color: var(--muted); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
+.xv .ctl output { justify-self: end; font-family: var(--font-mono); font-size: 12.5px; }
+.xv .ctl input[type="range"] { grid-column: 1 / -1; width: 100%; margin: 0; accent-color: var(--accent); }
+.xv .ctl input:disabled { opacity: 0.45; }
+.xv .ctl-more { display: contents; }
+.xv .more { display: none; }
+.xv-btn {
+  padding: 6px 11px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.xv-btn:hover { border-color: var(--ink); }
+.xv-btn[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.xv-btn:disabled { opacity: 0.45; cursor: default; }
+
+/* ---------- Parts panel: Details / All parts ---------- */
+.xv .inspector { display: grid; grid-template-rows: auto minmax(0, 1fr); min-width: 0; min-height: 0; border-left: 1px solid var(--xv-rule); }
+.xv .tabs { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--xv-rule); }
+.xv:not(.is-live) .tabs { display: none; }
+.xv .tab {
+  margin-bottom: -1px;
+  padding: 11px 12px 10px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.xv .tab:hover { color: var(--ink); }
+.xv .tab[aria-selected="true"] { border-bottom-color: var(--ink); color: var(--ink); }
+.xv .tab .count { margin-left: 4px; color: var(--muted); }
+.xv .ipanel { min-height: 0; max-height: calc(clamp(420px, 66vh, 620px) + 60px); overflow-y: auto; }
+.xv-card { padding: 18px 18px 20px; }
+.xv .card-head { display: flex; align-items: center; gap: 10px; }
+.xv .card-num {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--xv-select);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+}
+.xv .card-num.whole { background: var(--accent); color: var(--ink); font-size: 11px; }
+.xv .card-sys { color: var(--muted); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.xv-card h2 { margin: 10px 0 8px; font-family: var(--font-head); font-size: 24px; font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; }
+.xv .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
+.xv .chip { padding: 2px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-2); font-size: 12px; font-weight: 500; }
+.xv .chip.std { border-color: var(--line-strong); color: var(--ink); }
+.xv-card p { max-width: 62ch; margin: 0 0 12px; color: var(--ink-2); font-size: 15px; }
+.xv-card p.aside { margin: 14px 0 0; color: var(--muted); font-size: 13px; }
+.xv .specs { display: grid; grid-template-columns: minmax(0, 1fr) auto; margin: 0; border-top: 1px solid var(--xv-rule-2); }
+.xv .specs dt, .xv .specs dd { padding: 6px 0; border-bottom: 1px solid var(--xv-rule-2); }
+.xv .specs dt { padding-right: 12px; color: var(--ink-2); font-size: 13.5px; }
+.xv .specs dd { margin: 0; font-family: var(--font-mono); font-size: 13px; text-align: right; }
+.xv .specs dd small { display: block; color: var(--muted); font-size: 11.5px; }
+.xv .card-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.xv-card .speeds { margin: 4px 0 12px; }
+.xv .sysrows { margin: 4px 0 0; padding: 0; border-top: 1px solid var(--xv-rule-2); list-style: none; }
+.xv .sysrows li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--xv-rule-2); }
+.xv .sysrows b { display: block; font-size: 13px; font-weight: 600; }
+.xv .sysrows span { display: block; margin-top: 2px; color: var(--ink-2); font-size: 13.5px; line-height: 1.45; }
+.xv .sysrows .xv-btn { padding: 5px 10px; font-size: 12.5px; }
+.xv .plist h3 {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: 0;
+  padding: 8px 18px 6px;
+  border-bottom: 1px solid var(--xv-rule-2);
+  background: var(--surface);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.xv .plist ul { margin: 0; padding: 0; list-style: none; }
+.xv .prow {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: baseline;
+  width: 100%;
+  padding: 7px 18px;
+  border: 0;
+  border-bottom: 1px solid var(--xv-rule-2);
+  background: transparent;
+  color: var(--ink);
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+.xv:not(.is-live) .prow { cursor: default; }
+.xv .prow:hover, .xv .prow.hot { background: var(--xv-select-soft); }
+.xv .prow[aria-current="true"] { background: var(--xv-select-soft); box-shadow: inset 3px 0 0 var(--xv-select); }
+.xv .prow .n, .xv .prow .k { color: var(--muted); font-family: var(--font-mono); font-size: 12px; }
+.xv .prow .nm { min-width: 0; font-weight: 500; }
+.xv .prow .k { white-space: nowrap; }
+
+/* Top speed in each gear */
+.xv .speeds { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 5px 8px; align-items: center; }
+.xv .speeds .g, .xv .speeds .v { font-family: var(--font-mono); font-size: 12px; }
+.xv .speeds .g { color: var(--ink-2); }
+.xv .speeds .track { height: 8px; background: var(--xv-rule-2); }
+.xv .speeds .bar { display: block; height: 100%; border-radius: 0 4px 4px 0; background: var(--accent); }
+.xv .speeds .v { text-align: right; }
+.xv .speeds .sep { grid-column: 1 / -1; height: 4px; }
+
+.xv-note { margin: 12px 0 0; color: var(--muted); font-size: 13px; }
+
+@media (max-width: 1100px) {
+  .xv .bench { grid-template-columns: minmax(0, 1fr) 320px; }
+  .xv .hint { display: none; }
+}
+@media (max-width: 860px) {
+  .xv .bench { grid-template-columns: minmax(0, 1fr); }
+  .xv .stage { height: clamp(340px, 58vh, 520px); }
+  .xv .inspector { border-top: 1px solid var(--xv-rule); border-left: 0; }
+  .xv .ipanel { max-height: 70vh; }
+  .xv .titleblock { display: none; }
+}
+@media (max-width: 600px) {
+  .xv-facts { flex-wrap: nowrap; max-width: 100%; overflow-x: auto; }
+  .xv .sysbar { right: 56px; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; pointer-events: auto; }
+  .xv .sysbar::-webkit-scrollbar { display: none; }
+  .xv .sysbtn { flex: 0 0 auto; }
+  .xv .more { display: inline-flex; }
+  .xv .ctl-more { display: none; }
+  .xv .controls.open .ctl-more { display: flex; flex-wrap: wrap; gap: 10px 26px; width: 100%; }
+}
