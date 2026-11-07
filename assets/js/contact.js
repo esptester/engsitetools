@@ -26,21 +26,35 @@
   const setTopic = (value) => {
     if ([...topic.options].some((option) => option.value === value && !option.disabled)) {
       topic.value = value;
+      return true;
     }
+    return false;
   };
 
-  setTopic(new URLSearchParams(window.location.search).get("topic"));
+  const showForm = () => {
+    document.getElementById("message").scrollIntoView();
+    title.focus({ preventScroll: true });
+  };
+
+  // Links pick a topic with /contact#earthworks (one address for search engines).
+  // Older ?topic= links still work.
+  title.setAttribute("tabindex", "-1");
+  const fromHash = setTopic(decodeURIComponent(window.location.hash.slice(1)));
+  const fromQuery = setTopic(new URLSearchParams(window.location.search).get("topic"));
+  if (fromHash) requestAnimationFrame(showForm);
 
   // Topic links ("Send a support request" and so on) pick the topic and jump to the form.
-  title.setAttribute("tabindex", "-1");
   document.querySelectorAll("a[data-topic]").forEach((link) => {
     link.addEventListener("click", (event) => {
       event.preventDefault();
       setTopic(link.dataset.topic);
-      history.replaceState(null, "", `?topic=${encodeURIComponent(link.dataset.topic)}#message`);
-      document.getElementById("message").scrollIntoView();
-      title.focus({ preventScroll: true });
+      history.replaceState(null, "", `${location.pathname}#${encodeURIComponent(link.dataset.topic)}`);
+      showForm();
     });
+  });
+  if (fromQuery) history.replaceState(null, "", `${location.pathname}#${encodeURIComponent(topic.value)}`);
+  window.addEventListener("hashchange", () => {
+    if (setTopic(decodeURIComponent(window.location.hash.slice(1)))) showForm();
   });
 
   const setStatus = (text, { error = false, emailFallback = false } = {}) => {

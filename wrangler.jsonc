@@ -1,6 +1,10 @@
 {
   "name": "engsitetools",
   "compatibility_date": "2026-10-05",
+  // Serve the site only at engsitetools.com, not also at a *.workers.dev address,
+  // so search engines don't find a second copy of every page.
+  "workers_dev": false,
+  "preview_urls": false,
   // Only the contact form API runs code. Everything else is a static file.
   "main": "worker/index.js",
   "assets": {
