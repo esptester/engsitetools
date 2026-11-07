@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Slope ratios explained: what 1V:2H means — EngSiteTools</title>
-  <meta name="description" content="How to read slope ratios like 1V:2H, convert them to degrees and percent grade, and measure a slope on site. Includes a conversion table.">
+  <title>Slope ratio calculator and what 1V:2H means — EngSiteTools</title>
+  <meta name="description" content="Slope ratio calculator: convert 1V:2H and other V:H ratios to degrees and percent grade and back, with how to read and measure slopes on site.">
+  <meta name="robots" content="max-image-preview:large">
   <link rel="canonical" href="https://engsitetools.com/articles/slope-ratios-explained">
   <meta name="theme-color" content="#f4f2ed">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="EngSiteTools">
   <meta property="og:locale" content="en_AU">
-  <meta property="og:title" content="Slope ratios explained: what 1V:2H means — EngSiteTools">
-  <meta property="og:description" content="How to read slope ratios like 1V:2H, convert them to degrees and percent grade, and measure a slope on site. Includes a conversion table.">
+  <meta property="og:title" content="Slope ratio calculator and what 1V:2H means — EngSiteTools">
+  <meta property="og:description" content="Slope ratio calculator: convert 1V:2H and other V:H ratios to degrees and percent grade and back, with how to read and measure slopes on site.">
   <meta property="og:url" content="https://engsitetools.com/articles/slope-ratios-explained">
   <meta property="og:image" content="https://engsitetools.com/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -32,6 +33,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <script src="../assets/js/main.js" defer></script>
+  <script type="module" src="../assets/js/calculators.js"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -40,11 +42,11 @@
       "@type": "Article",
       "@id": "https://engsitetools.com/articles/slope-ratios-explained#article",
       "headline": "Slope ratios explained: what 1V:2H means",
-      "description": "How to read slope ratios like 1V:2H, convert them to degrees and percent grade, and measure a slope on site. Includes a conversion table.",
+      "description": "Slope ratio calculator: convert 1V:2H and other V:H ratios to degrees and percent grade and back, with how to read and measure slopes on site.",
       "url": "https://engsitetools.com/articles/slope-ratios-explained",
       "mainEntityOfPage": "https://engsitetools.com/articles/slope-ratios-explained",
       "datePublished": "2026-11-06",
-      "dateModified": "2026-11-06",
+      "dateModified": "2026-11-07",
       "inLanguage": "en-AU",
       "image": "https://engsitetools.com/assets/img/og-image.png",
       "author": {
@@ -129,6 +131,29 @@
     <section class="legal">
       <div class="container">
         <article class="prose legal-doc article-doc">
+          <h2 id="calculator">Slope ratio calculator</h2>
+          <div class="calc-tool" data-calc="slope">
+            <form class="calc-form" aria-label="Slope ratio calculator">
+              <p class="calc-hint">Type in any box and the others update.</p>
+              <div class="calc-grid calc-grid-3">
+                <div class="field"><label for="sr-h">Ratio, 1V to H (H)</label><input id="sr-h" name="h" type="number" inputmode="decimal" min="0" step="any" value="2"></div>
+                <div class="field"><label for="sr-angle">Angle (°)</label><input id="sr-angle" name="angle" type="number" inputmode="decimal" min="0" max="90" step="any" value="26.6"></div>
+                <div class="field"><label for="sr-grade">Grade (%)</label><input id="sr-grade" name="grade" type="number" inputmode="decimal" min="0" step="any" value="50"></div>
+              </div>
+              <div class="calc-grid">
+                <div class="field"><label for="sr-rise">Rise or fall (m)</label><input id="sr-rise" name="rise" type="number" inputmode="decimal" min="0" step="any" value="1.5"></div>
+                <div class="field"><label for="sr-run">Horizontal distance (m)</label><input id="sr-run" name="run" type="number" inputmode="decimal" min="0" step="any" value="3"></div>
+              </div>
+            </form>
+            <dl class="calc-out">
+              <div class="calc-main"><dt>Ratio (V:H)</dt><dd data-out="vh" aria-live="polite">1V:2H</dd></div>
+              <div><dt>Ratio (H:V)</dt><dd data-out="hv">2H:1V</dd></div>
+              <div><dt>Gradient</dt><dd data-out="in">1 in 2</dd></div>
+              <div><dt>Angle</dt><dd data-out="angle">26.6°</dd></div>
+              <div><dt>Grade</dt><dd data-out="grade">50%</dd></div>
+            </dl>
+            <p class="calc-note">The order matters: check which number is the vertical on your drawing or specification.</p>
+          </div>
           <h2>Reading the ratio</h2>
           <p>A slope ratio compares the rise to the run. <strong>1V:2H</strong> means the ground rises, or falls, 1 unit vertically for every 2 units horizontally. The units don't matter as long as they're the same: 1 m in 2 m and 0.5 m in 1 m are the same slope.</p>
           <p>The catch is the order. Some drawings and specifications put the vertical first (1V:2H), others put the horizontal first (2H:1V, or just 2:1), and "1 in 2" is common too. Even our own apps differ: TrenchCalc asks for a batter as H:V, while SlopeCheck shows the slope as V:H. Always check which number is the vertical, and label both when you write one down.</p>

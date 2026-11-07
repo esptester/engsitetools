@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>How to calculate trench volume — EngSiteTools</title>
-  <meta name="description" content="How to calculate trench and excavation volume for vertical, battered and benched walls, with worked examples for bulking, truck loads and backfill.">
+  <title>Trench volume calculator and formulas — EngSiteTools</title>
+  <meta name="description" content="Trench volume calculator for vertical, battered and benched trenches, with the formulas and worked examples for bulking, truck loads and backfill.">
+  <meta name="robots" content="max-image-preview:large">
   <link rel="canonical" href="https://engsitetools.com/articles/how-to-calculate-trench-volume">
   <meta name="theme-color" content="#f4f2ed">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="EngSiteTools">
   <meta property="og:locale" content="en_AU">
-  <meta property="og:title" content="How to calculate trench volume — EngSiteTools">
-  <meta property="og:description" content="How to calculate trench and excavation volume for vertical, battered and benched walls, with worked examples for bulking, truck loads and backfill.">
+  <meta property="og:title" content="Trench volume calculator and formulas — EngSiteTools">
+  <meta property="og:description" content="Trench volume calculator for vertical, battered and benched trenches, with the formulas and worked examples for bulking, truck loads and backfill.">
   <meta property="og:url" content="https://engsitetools.com/articles/how-to-calculate-trench-volume">
   <meta property="og:image" content="https://engsitetools.com/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -32,6 +33,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <script src="../assets/js/main.js" defer></script>
+  <script type="module" src="../assets/js/calculators.js"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -40,11 +42,11 @@
       "@type": "Article",
       "@id": "https://engsitetools.com/articles/how-to-calculate-trench-volume#article",
       "headline": "How to calculate trench volume",
-      "description": "How to calculate trench and excavation volume for vertical, battered and benched walls, with worked examples for bulking, truck loads and backfill.",
+      "description": "Trench volume calculator for vertical, battered and benched trenches, with the formulas and worked examples for bulking, truck loads and backfill.",
       "url": "https://engsitetools.com/articles/how-to-calculate-trench-volume",
       "mainEntityOfPage": "https://engsitetools.com/articles/how-to-calculate-trench-volume",
       "datePublished": "2026-11-06",
-      "dateModified": "2026-11-06",
+      "dateModified": "2026-11-07",
       "inLanguage": "en-AU",
       "image": "https://engsitetools.com/assets/img/og-image.png",
       "author": {
@@ -129,6 +131,44 @@
     <section class="legal">
       <div class="container">
         <article class="prose legal-doc article-doc">
+          <h2 id="calculator">Trench volume calculator</h2>
+          <div class="calc-tool" data-calc="trench">
+            <form class="calc-form" aria-label="Trench volume calculator">
+              <fieldset class="calc-seg">
+                <legend>Walls</legend>
+                <input type="radio" id="tv-vertical" name="shape" value="vertical"><label for="tv-vertical">Vertical</label>
+                <input type="radio" id="tv-battered" name="shape" value="battered" checked><label for="tv-battered">Battered</label>
+                <input type="radio" id="tv-benched" name="shape" value="benched"><label for="tv-benched">Benched</label>
+              </fieldset>
+              <div class="calc-grid">
+                <div class="field"><label for="tv-length">Length (m)</label><input id="tv-length" name="length" type="number" inputmode="decimal" min="0" step="any" value="20"></div>
+                <div class="field"><label for="tv-depth">Depth (m)</label><input id="tv-depth" name="depth" type="number" inputmode="decimal" min="0" step="any" value="1.5"></div>
+                <div class="field"><label for="tv-base">Base width (m)</label><input id="tv-base" name="base" type="number" inputmode="decimal" min="0" step="any" value="0.6"></div>
+                <div class="field" data-when="battered"><label for="tv-batter">Batter, 1V to H (H)</label><input id="tv-batter" name="batter" type="number" inputmode="decimal" min="0" step="any" value="1"></div>
+                <div class="field" data-when="benched" hidden><label for="tv-levels">Levels</label><input id="tv-levels" name="levels" type="number" inputmode="numeric" min="1" step="1" value="3"></div>
+                <div class="field" data-when="benched" hidden><label for="tv-step">Step out each side (m)</label><input id="tv-step" name="step" type="number" inputmode="decimal" min="0" step="any" value="1"></div>
+              </div>
+              <details class="calc-more" open>
+                <summary>Truck loads and backfill</summary>
+                <div class="calc-grid">
+                  <div class="field"><label for="tv-bulking">Bulking factor</label><input id="tv-bulking" name="bulking" type="number" inputmode="decimal" min="0" step="any" value="1.25"></div>
+                  <div class="field"><label for="tv-truck">Truck load (m³)</label><input id="tv-truck" name="truck" type="number" inputmode="decimal" min="0" step="any" value="10"></div>
+                  <div class="field"><label for="tv-pipe">Pipe outside diameter (m)</label><input id="tv-pipe" name="pipe" type="number" inputmode="decimal" min="0" step="any" value="0.35"></div>
+                  <div class="field"><label for="tv-compaction">Fill compaction factor</label><input id="tv-compaction" name="compaction" type="number" inputmode="decimal" min="0" step="any" value="1.2"></div>
+                </div>
+              </details>
+            </form>
+            <dl class="calc-out">
+              <div class="calc-main"><dt>Trench volume (bank)</dt><dd data-out="volume" aria-live="polite">63.0 m³</dd></div>
+              <div><dt>Cross-section</dt><dd data-out="area">3.15 m²</dd></div>
+              <div><dt>Top width</dt><dd data-out="top">3.60 m</dd></div>
+              <div><dt>Loose volume</dt><dd data-out="loose">78.8 m³</dd></div>
+              <div><dt>Truck loads</dt><dd data-out="loads">8 (7.9)</dd></div>
+              <div><dt>Space to backfill</dt><dd data-out="backfill">61.1 m³</dd></div>
+              <div><dt>Loose fill to order</dt><dd data-out="order">73.3 m³</dd></div>
+            </dl>
+            <p class="calc-note">It starts with the battered example below. Clear a factor to leave it out. The factors are examples, so use the ones for your material.</p>
+          </div>
           <h2>Vertical walls: length × width × depth</h2>
           <p>For a trench with vertical walls, the cross-section is a rectangle, so the volume is the length times the base width times the depth:</p>
           <p><strong>Volume = L × W × D</strong></p>

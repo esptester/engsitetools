@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Earthworks Visualisation in Perth — EngSiteTools</title>
   <meta name="description" content="3D earthworks visualisation in Perth, WA: a 3D model of your job that you can move around and watch run, showing the site, the cut and fill, and the machines.">
+  <meta name="robots" content="max-image-preview:large">
   <link rel="canonical" href="https://engsitetools.com/earthworks-visualisation">
   <meta name="theme-color" content="#f4f2ed">
 
@@ -139,9 +140,9 @@
         <div class="mv" data-models>
           <div class="mv-head">
             <div class="mv-tabs" role="group" aria-label="Example job">
-              <button type="button" class="mv-tab" data-scene="cut-fill" aria-pressed="true">Cut to fill</button>
-              <button type="button" class="mv-tab" data-scene="load-out" aria-pressed="false">Stockpile load-out</button>
-              <button type="button" class="mv-tab" data-scene="hill" aria-pressed="false">Haul up a hill</button>
+              <button type="button" disabled class="mv-tab" data-scene="cut-fill" aria-pressed="true">Cut to fill</button>
+              <button type="button" disabled class="mv-tab" data-scene="load-out" aria-pressed="false">Stockpile load-out</button>
+              <button type="button" disabled class="mv-tab" data-scene="hill" aria-pressed="false">Haul up a hill</button>
             </div>
             <span class="mv-tag">Example</span>
           </div>
@@ -163,17 +164,17 @@
           </div>
 
           <div class="mv-controls">
-            <button type="button" class="mv-btn mv-play" data-mv-play aria-pressed="true">Pause</button>
+            <button type="button" disabled class="mv-btn mv-play" data-mv-play aria-pressed="true">Pause</button>
             <div class="mv-seg" role="group" aria-label="Speed">
-              <button type="button" data-speed="1" aria-pressed="false">1&times;</button>
-              <button type="button" data-speed="10" aria-pressed="true">10&times;</button>
-              <button type="button" data-speed="30" aria-pressed="false">30&times;</button>
+              <button type="button" disabled data-speed="1" aria-pressed="false">1&times;</button>
+              <button type="button" disabled data-speed="10" aria-pressed="true">10&times;</button>
+              <button type="button" disabled data-speed="30" aria-pressed="false">30&times;</button>
             </div>
             <div class="mv-step" role="group" aria-label="Trucks">
               <span class="mv-step-label">Trucks</span>
-              <button type="button" data-trucks="-1" aria-label="Fewer trucks">&minus;</button>
+              <button type="button" disabled data-trucks="-1" aria-label="Fewer trucks">&minus;</button>
               <output data-mv-trucks aria-live="polite">3</output>
-              <button type="button" data-trucks="1" aria-label="More trucks">+</button>
+              <button type="button" disabled data-trucks="1" aria-label="More trucks">+</button>
             </div>
           </div>
 

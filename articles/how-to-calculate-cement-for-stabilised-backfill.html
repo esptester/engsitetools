@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>How to calculate cement for stabilised backfill — EngSiteTools</title>
-  <meta name="description" content="How to work out the cement for cement-stabilised sand or soil backfill: the percentage, dry density, bags, water and strength, with a worked example.">
+  <title>Stabilised sand cement calculator: kg and bags — EngSiteTools</title>
+  <meta name="description" content="Cement calculator for cement-stabilised sand and backfill: kilograms and bags from the compacted volume, dry density and cement percentage.">
+  <meta name="robots" content="max-image-preview:large">
   <link rel="canonical" href="https://engsitetools.com/articles/how-to-calculate-cement-for-stabilised-backfill">
   <meta name="theme-color" content="#f4f2ed">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="EngSiteTools">
   <meta property="og:locale" content="en_AU">
-  <meta property="og:title" content="How to calculate cement for stabilised backfill — EngSiteTools">
-  <meta property="og:description" content="How to work out the cement for cement-stabilised sand or soil backfill: the percentage, dry density, bags, water and strength, with a worked example.">
+  <meta property="og:title" content="Stabilised sand cement calculator: kg and bags — EngSiteTools">
+  <meta property="og:description" content="Cement calculator for cement-stabilised sand and backfill: kilograms and bags from the compacted volume, dry density and cement percentage.">
   <meta property="og:url" content="https://engsitetools.com/articles/how-to-calculate-cement-for-stabilised-backfill">
   <meta property="og:image" content="https://engsitetools.com/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -32,6 +33,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <script src="../assets/js/main.js" defer></script>
+  <script type="module" src="../assets/js/calculators.js"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -40,11 +42,11 @@
       "@type": "Article",
       "@id": "https://engsitetools.com/articles/how-to-calculate-cement-for-stabilised-backfill#article",
       "headline": "How to calculate cement for stabilised backfill",
-      "description": "How to work out the cement for cement-stabilised sand or soil backfill: the percentage, dry density, bags, water and strength, with a worked example.",
+      "description": "Cement calculator for cement-stabilised sand and backfill: kilograms and bags from the compacted volume, dry density and cement percentage.",
       "url": "https://engsitetools.com/articles/how-to-calculate-cement-for-stabilised-backfill",
       "mainEntityOfPage": "https://engsitetools.com/articles/how-to-calculate-cement-for-stabilised-backfill",
       "datePublished": "2026-11-06",
-      "dateModified": "2026-11-06",
+      "dateModified": "2026-11-07",
       "inLanguage": "en-AU",
       "image": "https://engsitetools.com/assets/img/og-image.png",
       "author": {
@@ -129,6 +131,32 @@
     <section class="legal">
       <div class="container">
         <article class="prose legal-doc article-doc">
+          <h2 id="calculator">Cement calculator for stabilised sand</h2>
+          <div class="calc-tool" data-calc="cement">
+            <form class="calc-form" aria-label="Cement calculator for stabilised sand">
+              <fieldset class="calc-seg">
+                <legend>Cement content given as</legend>
+                <input type="radio" id="cc-percent" name="mode" value="percent" checked><label for="cc-percent">% by dry mass</label>
+                <input type="radio" id="cc-perm3" name="mode" value="perm3"><label for="cc-perm3">kg per m³</label>
+              </fieldset>
+              <div class="calc-grid">
+                <div class="field"><label for="cc-volume">Compacted volume (m³)</label><input id="cc-volume" name="volume" type="number" inputmode="decimal" min="0" step="any" value="10"></div>
+                <div class="field" data-when="percent"><label for="cc-density">Dry density (t/m³)</label><input id="cc-density" name="density" type="number" inputmode="decimal" min="0" step="any" value="1.8"></div>
+                <div class="field" data-when="percent"><label for="cc-pct">Cement (% by dry mass)</label><input id="cc-pct" name="percent" type="number" inputmode="decimal" min="0" step="any" value="5"></div>
+                <div class="field" data-when="perm3" hidden><label for="cc-perm3-value">Cement (kg per m³)</label><input id="cc-perm3-value" name="perm3" type="number" inputmode="decimal" min="0" step="any" value="90"></div>
+                <div class="field"><label for="cc-bag">Bag size (kg)</label><input id="cc-bag" name="bag" type="number" inputmode="decimal" min="0" step="any" value="20"></div>
+                <div class="field"><label for="cc-waste">Wastage allowance (%)</label><input id="cc-waste" name="wastage" type="number" inputmode="decimal" min="0" step="any" value="10"></div>
+              </div>
+            </form>
+            <dl class="calc-out">
+              <div class="calc-main"><dt>Cement</dt><dd data-out="kg" aria-live="polite">900 kg</dd></div>
+              <div><dt>Bags</dt><dd data-out="bags">45</dd></div>
+              <div><dt>With wastage</dt><dd data-out="kgw">990 kg</dd></div>
+              <div><dt>Bags with wastage</dt><dd data-out="bagsw">50</dd></div>
+              <div data-when="percent"><dt>Dry mass of fill</dt><dd data-out="dry">18.00 t</dd></div>
+            </dl>
+            <p class="calc-note">It starts with the worked example below. Use the density and cement content from your own specification and material.</p>
+          </div>
           <h2>What cement-stabilised backfill is</h2>
           <p>Cement-stabilised backfill is sand or soil mixed with a small amount of cement, placed and compacted like normal fill, and left to gain strength. In Australia it's often called cement-stabilised sand, or CSS. It's used where a trench needs stronger or more durable backfill than the material alone gives, such as under roads. It's either supplied pre-mixed or mixed on site.</p>
 

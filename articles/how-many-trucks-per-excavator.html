@@ -3,16 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>How many trucks per excavator? Matching an earthworks fleet — EngSiteTools</title>
-  <meta name="description" content="Work out how many trucks an excavator needs from the loading time and the truck cycle time, with the match factor and a worked example.">
+  <title>Trucks per excavator calculator and match factor — EngSiteTools</title>
+  <meta name="description" content="Trucks per excavator calculator: loading time, truck cycle time, match factor and production, with a worked example.">
+  <meta name="robots" content="max-image-preview:large">
   <link rel="canonical" href="https://engsitetools.com/articles/how-many-trucks-per-excavator">
   <meta name="theme-color" content="#f4f2ed">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="EngSiteTools">
   <meta property="og:locale" content="en_AU">
-  <meta property="og:title" content="How many trucks per excavator? Matching an earthworks fleet — EngSiteTools">
-  <meta property="og:description" content="Work out how many trucks an excavator needs from the loading time and the truck cycle time, with the match factor and a worked example.">
+  <meta property="og:title" content="Trucks per excavator calculator and match factor — EngSiteTools">
+  <meta property="og:description" content="Trucks per excavator calculator: loading time, truck cycle time, match factor and production, with a worked example.">
   <meta property="og:url" content="https://engsitetools.com/articles/how-many-trucks-per-excavator">
   <meta property="og:image" content="https://engsitetools.com/assets/img/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -32,6 +33,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Archivo:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <script src="../assets/js/main.js" defer></script>
+  <script type="module" src="../assets/js/calculators.js"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -40,7 +42,7 @@
       "@type": "Article",
       "@id": "https://engsitetools.com/articles/how-many-trucks-per-excavator#article",
       "headline": "How many trucks per excavator? Matching an earthworks fleet",
-      "description": "Work out how many trucks an excavator needs from the loading time and the truck cycle time, with the match factor and a worked example.",
+      "description": "Trucks per excavator calculator: loading time, truck cycle time, match factor and production, with a worked example.",
       "url": "https://engsitetools.com/articles/how-many-trucks-per-excavator",
       "mainEntityOfPage": "https://engsitetools.com/articles/how-many-trucks-per-excavator",
       "datePublished": "2026-11-07",
@@ -129,6 +131,37 @@
     <section class="legal">
       <div class="container">
         <article class="prose legal-doc article-doc">
+          <h2 id="calculator">Trucks per excavator calculator</h2>
+          <div class="calc-tool" data-calc="trucks">
+            <form class="calc-form" aria-label="Trucks per excavator calculator">
+              <div class="calc-grid">
+                <div class="field"><label for="tc-load">Truck load (m³ loose)</label><input id="tc-load" name="load" type="number" inputmode="decimal" min="0" step="any" value="15"></div>
+                <div class="field"><label for="tc-bucket">Bucket (m³ loose)</label><input id="tc-bucket" name="bucket" type="number" inputmode="decimal" min="0" step="any" value="3"></div>
+                <div class="field"><label for="tc-cycle">Excavator cycle (seconds)</label><input id="tc-cycle" name="cycle" type="number" inputmode="decimal" min="0" step="any" value="24"></div>
+                <div class="field"><label for="tc-distance">Haul distance, one way (km)</label><input id="tc-distance" name="distance" type="number" inputmode="decimal" min="0" step="any" value="1.2"></div>
+                <div class="field"><label for="tc-loaded">Loaded speed (km/h)</label><input id="tc-loaded" name="loaded" type="number" inputmode="decimal" min="0" step="any" value="20"></div>
+                <div class="field"><label for="tc-empty">Empty speed (km/h)</label><input id="tc-empty" name="empty" type="number" inputmode="decimal" min="0" step="any" value="30"></div>
+                <div class="field"><label for="tc-dump">Dump and turn (min)</label><input id="tc-dump" name="dump" type="number" inputmode="decimal" min="0" step="any" value="1"></div>
+                <div class="field"><label for="tc-spot">Spot at the excavator (min)</label><input id="tc-spot" name="spot" type="number" inputmode="decimal" min="0" step="any" value="0.5"></div>
+              </div>
+            </form>
+            <dl class="calc-out">
+              <div class="calc-main"><dt>Trucks needed</dt><dd data-out="needed" aria-live="polite">4.75</dd></div>
+              <div><dt>Passes per truck</dt><dd data-out="passes">5</dd></div>
+              <div><dt>Loading time</dt><dd data-out="loading">2.0 min</dd></div>
+              <div><dt>Truck cycle time</dt><dd data-out="cycle">9.5 min</dd></div>
+            </dl>
+            <table class="calc-table table-fit">
+              <thead><tr><th scope="col">Trucks</th><th scope="col">Match factor</th><th scope="col">Loads per hour</th><th scope="col">m³ loose per hour</th></tr></thead>
+              <tbody data-out="rows">
+                <tr><td>3</td><td>0.63</td><td>18.9</td><td>284</td></tr>
+                <tr class="calc-pick"><td>4</td><td>0.84</td><td>25.3</td><td>379</td></tr>
+                <tr class="calc-pick"><td>5</td><td>1.05</td><td>30.0</td><td>450</td></tr>
+                <tr><td>6</td><td>1.26</td><td>30.0</td><td>450</td></tr>
+              </tbody>
+            </table>
+            <p class="calc-note">Passes are rounded up to whole buckets, and the rates are theoretical. Real production is lower, so allow for job efficiency.</p>
+          </div>
           <h2>The basic idea</h2>
           <p>An excavator loads one truck at a time. While it's loading one, every other truck is hauling, dumping, coming back or waiting. You need enough trucks to keep the excavator loading, but not so many that they pile up behind it.</p>
           <ul>

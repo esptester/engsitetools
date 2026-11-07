@@ -1092,6 +1092,7 @@ export function mount(root) {
   setJob(JOBS[params.get('job')] ? params.get('job') : 'cut-fill');
   if (['follow', 'load', 'dump'].includes(params.get('view'))) setView(params.get('view'), true);
   resize();
+  root.querySelectorAll('button[disabled]').forEach((b) => { b.disabled = false; });
   status.hidden = true;
   root.classList.add('is-ready');
 
