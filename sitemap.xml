@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://engsitetools.com/</loc><lastmod>2026-11-06</lastmod></url>
-  <url><loc>https://engsitetools.com/tools</loc><lastmod>2026-11-06</lastmod></url>
+  <url><loc>https://engsitetools.com/</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://engsitetools.com/earthworks-visualisation</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://engsitetools.com/tools</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://engsitetools.com/slopecheck</loc><lastmod>2026-11-06</lastmod></url>
   <url><loc>https://engsitetools.com/sitearea</loc><lastmod>2026-11-06</lastmod></url>
   <url><loc>https://engsitetools.com/fastocr</loc><lastmod>2026-11-06</lastmod></url>
   <url><loc>https://engsitetools.com/trenchscanner</loc><lastmod>2026-11-06</lastmod></url>
-  <url><loc>https://engsitetools.com/earthworks-visualisation</loc><lastmod>2026-11-06</lastmod></url>
-  <url><loc>https://engsitetools.com/articles</loc><lastmod>2026-11-06</lastmod></url>
-  <url><loc>https://engsitetools.com/articles/what-is-a-construction-methodology-animation</loc><lastmod>2026-11-06</lastmod></url>
-  <url><loc>https://engsitetools.com/articles/how-to-write-a-construction-methodology-for-a-tender</loc><lastmod>2026-11-06</lastmod></url>
-  <url><loc>https://engsitetools.com/articles/how-to-brief-a-construction-animation</loc><lastmod>2026-11-06</lastmod></url>
-  <url><loc>https://engsitetools.com/articles/construction-animation-vs-4d-bim</loc><lastmod>2026-11-06</lastmod></url>
+  <url><loc>https://engsitetools.com/articles</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://engsitetools.com/articles/what-is-earthworks-visualisation</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://engsitetools.com/articles/how-many-trucks-per-excavator</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://engsitetools.com/articles/planning-earthworks-in-perth</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://engsitetools.com/articles/how-to-calculate-trench-volume</loc><lastmod>2026-11-06</lastmod></url>
-  <url><loc>https://engsitetools.com/articles/how-to-calculate-haul-cycle-time</loc><lastmod>2026-11-06</lastmod></url>
-  <url><loc>https://engsitetools.com/articles/how-to-estimate-haulage-cost-per-tonne</loc><lastmod>2026-11-06</lastmod></url>
   <url><loc>https://engsitetools.com/articles/slope-ratios-explained</loc><lastmod>2026-11-06</lastmod></url>
   <url><loc>https://engsitetools.com/articles/how-to-calculate-cement-for-stabilised-backfill</loc><lastmod>2026-11-06</lastmod></url>
   <url><loc>https://engsitetools.com/articles/how-to-measure-site-area-from-a-map</loc><lastmod>2026-11-06</lastmod></url>
-  <url><loc>https://engsitetools.com/about</loc><lastmod>2026-11-06</lastmod></url>
-  <url><loc>https://engsitetools.com/contact</loc><lastmod>2026-11-06</lastmod></url>
+  <url><loc>https://engsitetools.com/about</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://engsitetools.com/contact</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://engsitetools.com/legal</loc><lastmod>2026-11-06</lastmod></url>
 
   <!-- Legal documents keep the URLs used on the previous site and in app store listings -->
@@ -34,5 +31,4 @@
   <url><loc>https://engsitetools.com/sitearea-privacy</loc><lastmod>2026-08-02</lastmod></url>
   <url><loc>https://engsitetools.com/slopecheck-privacy</loc><lastmod>2026-08-02</lastmod></url>
   <url><loc>https://engsitetools.com/fastocr-privacy</loc><lastmod>2026-08-02</lastmod></url>
-  <url><loc>https://engsitetools.com/earthworks-visualisation-privacy</loc><lastmod>2026-11-06</lastmod></url>
 </urlset>

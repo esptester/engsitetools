@@ -17,32 +17,18 @@
   const submit = form.querySelector('button[type="submit"]');
   const submitLabel = submit.textContent;
   const topic = form.elements.topic;
-  const earthworks = form.querySelector("[data-earthworks-fields]");
-  const message = form.elements.message;
-  const messageOptional = form.querySelector("[data-message-optional]");
   const slot = form.querySelector("[data-turnstile]");
 
   let widgetId;
   let turnstileFailed = false;
   let sending = false;
 
-  // Earthworks enquiries get their own fields, and the message becomes optional.
-  const applyTopic = () => {
-    const isEarthworks = topic.value === "earthworks";
-    earthworks.hidden = !isEarthworks;
-    earthworks.disabled = !isEarthworks;
-    message.required = !isEarthworks;
-    messageOptional.hidden = !isEarthworks;
-  };
-
   const setTopic = (value) => {
     if ([...topic.options].some((option) => option.value === value && !option.disabled)) {
       topic.value = value;
     }
-    applyTopic();
   };
 
-  topic.addEventListener("change", applyTopic);
   setTopic(new URLSearchParams(window.location.search).get("topic"));
 
   // Topic links ("Send a support request" and so on) pick the topic and jump to the form.
@@ -128,7 +114,6 @@
 
   success.querySelector("[data-form-again]").addEventListener("click", () => {
     form.reset();
-    applyTopic();
     setStatus("");
     success.hidden = true;
     formBody.hidden = false;

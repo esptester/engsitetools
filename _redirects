@@ -11,8 +11,16 @@
 /trenchcalc/business.html           /trenchcalc/features           301
 /trenchcalc/business-pricing.html   /trenchcalc/features           301
 
-# The 3D methodology animation service became earthworks haulage visualisation (November 2026).
-/methodology-animation              /earthworks-visualisation           301
-/methodology-animation.html         /earthworks-visualisation           301
-/methodology-animation-privacy      /earthworks-visualisation-privacy   301
-/methodology-animation-privacy.html /earthworks-visualisation-privacy   301
+# Pages removed or replaced in November 2026. Old URLs go to the closest current page.
+/methodology-animation                                          /earthworks-visualisation                     301
+/methodology-animation.html                                     /earthworks-visualisation                     301
+/methodology-animation-privacy                                  /engsitetools-privacy                         301
+/methodology-animation-privacy.html                             /engsitetools-privacy                         301
+/earthworks-visualisation-privacy                               /engsitetools-privacy                         301
+/earthworks-visualisation-privacy.html                          /engsitetools-privacy                         301
+/articles/what-is-a-construction-methodology-animation          /articles/what-is-earthworks-visualisation    301
+/articles/construction-animation-vs-4d-bim                      /articles/what-is-earthworks-visualisation    301
+/articles/how-to-brief-a-construction-animation                 /articles/what-is-earthworks-visualisation    301
+/articles/how-to-write-a-construction-methodology-for-a-tender  /articles                                     301
+/articles/how-to-calculate-haul-cycle-time                      /articles/how-many-trucks-per-excavator       301
+/articles/how-to-estimate-haulage-cost-per-tonne                /articles/how-many-trucks-per-excavator       301

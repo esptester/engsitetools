@@ -23,9 +23,6 @@ const FIELDS = {
   name: { max: 100 },
   email: { max: 254 },
   company: { max: 120 },
-  works: { max: 200 },
-  location: { max: 120 },
-  timing: { max: 120 },
   message: { max: 5000, multiline: true },
 };
 
@@ -170,13 +167,7 @@ function validate(body) {
   if (!values.name) errors.push("name");
   if (!EMAIL_RE.test(values.email || "")) errors.push("email");
 
-  if (values.topic === "earthworks") {
-    if (!values.works) errors.push("works");
-    if (!values.location) errors.push("location");
-  } else {
-    if (!values.message) errors.push("message");
-    values.works = values.location = values.timing = "";
-  }
+  if (!values.message) errors.push("message");
 
   return { values, errors: [...new Set(errors)] };
 }
@@ -190,10 +181,7 @@ function buildText(v, topic) {
     `Email: ${v.email}`,
   ];
   if (v.company) lines.push(`Company: ${v.company}`);
-  if (v.works) lines.push(`Type of earthworks: ${v.works}`);
-  if (v.location) lines.push(`Location: ${v.location}`);
-  if (v.timing) lines.push(`When they need it: ${v.timing}`);
-  if (v.message) lines.push("", "Message:", v.message);
+  lines.push("", "Message:", v.message);
   lines.push("", `Reply to this email to answer ${v.name} directly.`);
   return lines.join("\n");
 }
@@ -205,9 +193,6 @@ function buildHtml(v, topic) {
     ["Name", v.name],
     ["Email", v.email],
     ["Company", v.company],
-    ["Type of earthworks", v.works],
-    ["Location", v.location],
-    ["When they need it", v.timing],
   ]
     .filter(([, value]) => value)
     .map(
@@ -215,9 +200,7 @@ function buildHtml(v, topic) {
         `<tr><th align="left" style="${cell};padding-right:16px;color:#6b6f78;font-weight:600">${esc(label)}</th><td style="${cell}">${esc(value)}</td></tr>`,
     )
     .join("");
-  const message = v.message
-    ? `<p style="margin:20px 0 6px;color:#6b6f78;font-weight:600">Message</p><div style="white-space:pre-wrap">${esc(v.message)}</div>`
-    : "";
+  const message = `<p style="margin:20px 0 6px;color:#6b6f78;font-weight:600">Message</p><div style="white-space:pre-wrap">${esc(v.message)}</div>`;
   return (
     `<div style="font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5;color:#16171a">` +
     `<p style="margin:0 0 16px">New message from the contact form on engsitetools.com.</p>` +
