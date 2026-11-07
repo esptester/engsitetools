@@ -1,4 +1,4 @@
-// Loads the 3D example models only when their section comes near the screen.
+// Loads the 3D example models only after the page has loaded and their section comes into view.
 (() => {
   const root = document.querySelector('[data-models]');
   if (!root) return;
@@ -18,15 +18,20 @@
         console.error(err);
       });
   };
-  if ('IntersectionObserver' in window) {
+  const watch = () => {
+    if (!('IntersectionObserver' in window)) {
+      start();
+      return;
+    }
     const io = new IntersectionObserver((entries) => {
       if (entries.some((e) => e.isIntersecting)) {
         io.disconnect();
         start();
       }
-    }, { rootMargin: '600px 0px' });
+    }, { rootMargin: '150px 0px' });
     io.observe(root);
-  } else {
-    start();
-  }
+  };
+  // Wait for the page itself to finish first, so the 3D never slows the first view
+  if (document.readyState === 'complete') watch();
+  else window.addEventListener('load', watch, { once: true });
 })();
