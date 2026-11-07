@@ -1204,6 +1204,17 @@ h1, h2, h3 {
 .section-foot { margin-top: 40px; }
 .section-dark .section-note { color: rgba(255, 255, 255, 0.7); }
 
+/* The founder photo, under the heading on the About page */
+.founder-photo {
+  display: block;
+  width: min(300px, 72vw);
+  height: auto;
+  margin-top: 32px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 48px -30px rgba(22, 23, 26, 0.45);
+}
+
 /* Split: heading left, copy right */
 .split {
   display: grid;
