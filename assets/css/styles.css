@@ -422,7 +422,8 @@ h1, h2, h3 {
 .door .feature-icon svg { stroke: var(--accent-text); }
 .door-icons { display: flex; gap: 6px; }
 .door-icons img { width: 32px; height: 32px; border-radius: 8px; }
-.door h2 {
+.door h2,
+.door h3 {
   margin-top: 24px;
   font-size: clamp(1.45rem, 2.2vw, 1.8rem);
   font-weight: 800;
@@ -558,6 +559,9 @@ h1, h2, h3 {
   border-radius: 16px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02), 0 28px 60px -28px rgba(22, 23, 26, 0.3);
 }
+
+/* a still image in a card, under its header */
+.calc-shot { display: block; width: 100%; height: auto; }
 
 .calc-head {
   display: flex;
